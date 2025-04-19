@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <title>An Introduction to Waves</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- <style>
+        .nav-shell-shell {
+            display: flex;
+            width: 100vw;
+            justify-content: flex-end;
+        }
+
+        .nav-shell {
+            padding-top: calc(var(--header-height) / 2);
+            width: calc(100vw / 8) !important;
+            position: fixed;
+            transition: color .3s;
+            display: flex;
+            justify-content: start;
+            z-index: 100;
+        }
+
+        .nav-text {
+            position: relative;
+        }
+
+        p.nav-text-hover {
+            position: relative;
+            left: 0;
+            transition: all var(--ease-time) ease;
+        }
+
+        p.nav-text-hover:hover {
+            color: var(--background-color);
+            transition: all var(--ease-time) ease;
+        }
+
+        .nav-text-hover-shell:hover .nav-text-hover {
+            left: -10px;
+        }
+
+        p.nav-text-hover.active {
+            left: -10px;
+        }
+    </style> -->
+</head>
+
+<body>
+    <header id="header" class="header-grid padding">
+        <div id="logo" class="grid-item header-item span-4 text-underline-parent">
+            <p class="header-icon"><a class="no-style" href="index.html">SPECTRA</a></p>
+        </div>
+        <div class="grid-item header-item non-menu-item non-mobile text-underline-parent">
+            <p class="text-underline"><a class="no-style" href="index.html">Index</a></p>
+        </div>
+        <a href="lessons.html" class="grid-item header-item non-menu-item non-mobile text-underline-parent no-style">
+            <p class="text-underline">Lessons</p>
+        </a>
+        <div class="grid-item header-item non-menu-item non-mobile text-underline-parent">
+            <p class="text-underline">About</p>
+        </div>
+        <div class="grid-item header-item space-between">
+            <div id="search-icon-div" class="non-menu-item">
+                <svg id="mobile-search-icon" xmlns="http://www.w3.org/2000/svg" width="21" height="20"
+                    viewBox="0 0 21 20" fill="none">
+                    <path
+                        d="M19.5 19L15.5 15M9.5 17C5.08172 17 1.5 13.4183 1.5 9C1.5 4.58172 5.08172 1 9.5 1C13.9183 1 17.5 4.58172 17.5 9C17.5 13.4183 13.9183 17 9.5 17Z"
+                        stroke="black" stroke-width="2" />
+                </svg>
+                <div id="search-icon"></div>
+            </div>
+
+            <div id="menu-icon-div" class="non-searchbar-item">
+                <svg id="mobile-menu-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 20 14"
+                    fill="none">
+                    <path d="M0 1H20M0 7H20M0 13H20" stroke="black" stroke-width="1.5" />
+                </svg>
+                <div id="menu-icon"></div>
+            </div>
+        </div>
+    </header>
+
+    <div id="search-container">
+        <input type="text" id="search-bar" placeholder="Search...">
+        <div class="horizontal-scroll">
+            <ul id="search-results"></ul>
+        </div>
+    </div>
+
+    <div id="menu-container">
+        <div class="menu-grid">
+            <div></div>
+            <div>
+                <div class="menu-text-parent large-text-margin-bottom">
+                    <div class="hover-parent">
+                        <a href="posters.html" class="no-style menu-text">Posters</a>
+                    </div>
+                </div>
+                <div class="menu-text-parent large-text-margin-bottom">
+                    <div class="hover-parent">
+                        <a href="/test/index.html" class="no-style menu-text">Videos</a>
+                    </div>
+                </div>
+                <div class="menu-text-parent large-text-margin-bottom">
+                    <div class="hover-parent">
+                        <a href="hes.html" class="no-style menu-text">Interactive</a>
+                    </div>
+                </div>
+                <div class="menu-text-parent large-text-margin-bottom">
+                    <div class="hover-parent">
+                        <a href="hes.html" class="no-style menu-text">3D</a>
+                    </div>
+                </div>
+                <div class="menu-text-parent large-text-margin-bottom">
+                    <div class="hover-parent">
+                        <a href="hes.html" class="no-style menu-text">Lessons</a>
+                    </div>
+                </div>
+                <div class="menu-text-parent large-text-margin-bottom">
+                    <div class="hover-parent">
+                        <a href="hes.html" class="no-style menu-text">Music</a>
+                    </div>
+                </div>
+                <div class="menu-text-parent large-text-margin-bottom">
+                    <div class="hover-parent">
+                        <a href="hes.html" class="no-style menu-text">About</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="chladni"></div>
+
+    <section class="margin-top">
+        <div class="grid padding">
+            <div class="grid-item span-4 centered margin-bottom">
+                <h1 class="text-margin-bottom">Introduction to Waves</h1>
+                <h3 class="align-left">Lesson 1</h3>
+            </div>
+            <div class="grid-item span-4 margin-bottom">
+                <p>An interactive installation exploring the physics and beauty of light and sound. Through motion,
+                    resonance, and perception, SPECTRA invites viewers to engage with the natural forces that shape how
+                    we see and hear the world.<br><br> This website, along with all the projects within in, were
+                    created, designed, and composed by <a>Xander Munc</a> as a part of his 2025 degree
+                    project.<br><br>To learn more about the projects check out the <a>about page.</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="gradient-five centered top-border" style="width: 100vw; height: calc(var(--header-height) * 2);">
+        <h2 class="neulis-medium white">What are Waves?</h2>
+    </div>
+
+    <div class="grid border-padding bottom-border">
+        <div class="grid-item span-1"></div>
+        <div class="grid-item span-4">
+            <h1 class="double-text-margin-bottom">Overview</h1>
+            <p>The Glossary of Light and Sound is an interactive resource for
+                understanding the basics of the wave science of Light and Sound. It is a tool for beginners and curious
+                learners to explore the phenomena of the beautiful world of waves around them. </p>
+        </div>
+        <div class="grid-item span-3"></div>
+    </div>
+
+    <div class="grid border-padding bottom-border">
+        <div class="grid-item span-1"></div>
+        <div class="grid-item span-6">
+            <h1 class="double-text-margin-bottom">What are Waves?</h1>
+            <p class="text-margin-bottom">Waves are patterns of moving energy.</p>
+            <p class="text-margin-bottom">Waves move energy from one place to another, like ripples running on water or
+                sound
+                traveling through air. </p>
+            <p class="text-margin-bottom">Light is a wave, and sound is a wave.</p>
+            <p class="text-margin-bottom">Some waves transport energy by moving through matter, traveling through
+                different
+                mediums such as air, water, or solids. But, other waves can even move through empty space.</p>
+            <p class="text-margin-bottom">Understanding waves is the key to understanding how we perceive the world
+                around us, from the light we see, to the sounds we hear, to the force that holds us to our planet.</p>
+        </div>
+        <div class="grid-item span-1"></div>
+    </div>
+
+    <div class="gradient-five centered" style="width: 100vw; height: calc(var(--header-height) * 2);">
+        <h2 class="neulis-medium white">Waves are patterns of moving energy.</h2>
+    </div>
+
+    <div class="grid border-padding">
+        <div class="span-1"></div>
+        <div class="grid-item span-6">
+            <h1 class="double-text-margin-bottom">The Anatomy of a Wave</h1>
+            <p>Waves are made of their fundamental properties, which define how they
+                function and interact with the world. The four properties of waves we will look at first are amplitude,
+                frequency, velocity, and wavelength.</p>
+        </div>
+        <div class="span-1"></div>
+    </div>
+
+    <div class="bottom-border centered blue">
+        <div class="four-column margin-bottom">
+            <div id="amplitude-selection" class="AFVW-grid-item hoverable-item active">
+                <p class="hoverable-text-white active">Amplitude</p>
+            </div>
+            <div id="frequency-selection" class="AFVW-grid-item hoverable-item-deep-blue">
+                <p class="hoverable-text-white">Frequency</p>
+            </div>
+            <div id="velocity-selection" class="AFVW-grid-item hoverable-item-deep-blue">
+                <p class="hoverable-text-white">Velocity</p>
+            </div>
+            <div id="wavelength-selection" class="AFVW-grid-item hoverable-item-deep-blue">
+                <p class="hoverable-text-white">Wavelength</p>
+            </div>
+        </div>
+        <div class="grid padding">
+            <div class="span-1"></div>
+            <div class="grid-item span-3">
+                <h1 id="anatomy-title" class="white">Amplitude</h1>
+                <br>
+                <p id="anatomy-paragraph" class="white margin-bottom">Amplitude is the wave's maximum
+                    displacement, the higher the amplitude, the more energy the wave carries. The energy of the wave is
+                    proportional to the square of the amplitude. It is measured in various units depending on the type
+                    of wave. <br><br> In light, amplitude affects intensity or brightness. It is commonly measured in
+                    electric field strength (Volts per meter, V/m). <br><br> In sound, amplitude corresponds to loudness
+                    and is expressed as pressure. It is measured in decibels (dB), which represents perceived loudness
+                    on a logarithmic scale. </p>
+            </div>
+            <div class="grid-item span-3 centered">
+                <canvas id="amplitude-wave" class="absolute margin-bottom inactive" width="800" height="300"></canvas>
+                <canvas id="solo-wave" class="absolute margin-bottom" width="800" height="300"></canvas>
+                <h1 id="anatomy-title-symbol" class="double-title-text white z-index-1">A</h1>
+                <div class="anatomy-symbol-blur-rect margin-bottom"></div>
+                <input type="range" id="solo-amplitude" class="margin-bottom" min="5" max="100" value="50" step="0.001">
+                <input type="range" id="solo-frequency" class="margin-bottom inactive" min="1" max="5" value="1"
+                    step="0.001"> <input type="range" id="solo-velocity" class="margin-bottom inactive" min="1" max="5"
+                    value="1.6" step="0.001"> <input type="range" id="solo-wavelength" class="margin-bottom inactive"
+                    min="1" max="5" value="1.6" step="0.001">
+            </div>
+            <div class="span-1"></div>
+        </div>
+    </div>
+
+    <div class="border-padding bottom-border">
+        <div class="grid">
+            <div class="span-1"></div>
+            <h1 class="span-6 large-text-margin-bottom">A Closer Look</h1>
+            <div class="span-1"></div>
+        </div>
+        <div class="grid">
+            <div class="span-1"></div>
+            <image class="span-3" src="images/svg/Anatomy.svg" style="background-color: white;"> </image>
+            <p class="span-3">Amplitude is the wave's maximum displacement.<br><br>
+                Frequency is the number of wave cycles that pass a given point in a second.<br><br> Velocity is the
+                speed of a wave.<br><br> Wavelength is the distance between two consecutive points on a wave.
+            </p>
+            <div class="span-1"></div>
+        </div>
+    </div>
+
+    <div class="grid border-padding-no-bottom" style="background-color: white; z-index: 10;">
+        <div class="span-1"></div>
+        <div class="grid-item span-6">
+            <h1 class="large-text-margin-bottom">Wavelength vs Frequency</h1>
+            <p class="large-text-margin-bottom">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta alias
+                tempora tenetur
+                quaerat. Similique ducimus in repellendus neque autem natus obcaecati voluptatibus ullam hic ipsum
+                magni, temporibus iusto quia aut tempora fugiat minima commodi, ab nobis dignissimos ut vero, aliquid
+                ex! Culpa rerum veritatis maiores nobis at facere eveniet, ea quaerat iusto illum accusantium
+                praesentium. Illum magni id explicabo delectus.</p><br>
+        </div>
+        <div class="span-1"></div>
+    </div>
+
+    <div class="grid border-padding-left-right bottom-border" style="background-color: white; z-index: 10;">
+        <div class="span-1"></div>
+        <div class="span-3">
+            <image class="double-header-height" src="images/svg/LowWHighF.svg" style="background-color: white;"></image>
+        </div>
+        <div class="span-3">
+            <image class="margin-bottom double-header-height" src="images/svg/HighWLowF.svg"
+                style="background-color: white;"></image>
+        </div>
+        <div class="span-1"></div>
+    </div>
+
+    <div class="grid border-padding">
+        <div class="span-1"></div>
+        <div class="grid-item span-6">
+            <h1 class="double-text-margin-bottom">The Equation v=fλ</h1>
+            <p class="paragraph">The relationship between velocity, frequency, and wavelength is
+                represented by the equation v=fλ. It shows that the speed of a wave is equal to its frequency multiplied
+                by its wavelength. This creates a connection between how fast a wave moves and its shape-related
+                properties. This equation is universal, applying to all types of waves, and illustrates how these
+                properties interact with each other.</p>
+        </div>
+        <div class="span-1"></div>
+    </div>
+
+    <div class="bottom-border centered">
+
+        <canvas id="wave" width="800" height="300"></canvas>
+
+        <div class="wave-control-grid">
+            <div class="wave-control-grid-item">
+                <label for="amplitude">
+                    <h2>Amplitude</h2>
+                </label>
+            </div>
+            <div class="centered">
+                <input type="range" id="amplitude" min="5" max="100" value="50" step="0.001">
+            </div>
+            <div class="wave-control-grid-item">
+                <label for="velocity">
+                    <h2>Velocity</h2>
+                </label>
+            </div>
+            <div class="centered">
+                <input type="range" id="velocity" min="1" max="5" value="1.6" step="0.001">
+            </div>
+            <div class="wave-control-grid-item">
+                <label for="frequency">
+                    <h2>Frequency</h2>
+                </label>
+            </div>
+            <div class="centered">
+                <input type="range" id="frequency" min="1" max="5" value="1" step="0.001">
+            </div>
+            <div class="wave-control-grid-item">
+                <label for="wavelength">
+                    <h2>Wavelength</h2>
+                </label>
+            </div>
+            <div class="centered">
+                <input type="range" id="wavelength" min="1" max="5" value="1.6" step="0.001">
+            </div>
+        </div>
+
+        <div id="color-rect"></div>
+    </div>
+
+    <div class="border-padding" style="background-color: white; z-index: 10;">
+        <div class="grid">
+            <div class="span-1"></div>
+            <h1 class="span-6 large-text-margin-bottom">Conclusion</h1>
+            <div class="span-1"></div>
+        </div>
+        <div class="grid">
+            <div class="span-1"></div>
+            <div class="grid-item span-6">
+                <p>Waves are patterns of moving energy.</p>
+                <p>Waves move energy from one place to another, like ripples running on water or sound traveling through
+                    air. </p>
+                <p>Light is a wave, and sound is a wave.</p>
+                <p>Some waves transport energy by moving through matter, traveling through different mediums such as
+                    air, water, or solids. But, other waves can even move through empty space.</p>
+                <p>Understanding waves is the key to understanding how we perceive the world around us, from the light
+                    we see, to the sounds we hear, to the force that holds us to our planet. </p>
+            </div>
+            <div class="span-1"></div>
+        </div>
+    </div>
+
+    <!-- <footer>
+        <div class="grid">
+            <div class="grid-item-black">
+                <p>XANDER MUNC</p>
+            </div>
+            <div class="grid-item-black">
+                <p>AS A PART OF SENIOR DEGREE PROJECT</p>
+            </div>
+        </div>
+    </footer> -->
+    <script src="js/AFVW/AFVW.js"></script>
+    <script src="js/AFVW/AFWVSolo.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/menu-icon.js"></script>
+    <script src="js/search-icon.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.AFVW-grid-item').forEach(gridItem => {
+                const pTag = gridItem.querySelector('p');
+                if (pTag) {
+                    pTag.classList.remove('active');
+                }
+            });
+
+
+            const titleMap = {
+                "amplitude-selection": "Amplitude",
+                "frequency-selection": "Frequency",
+                "velocity-selection": "Velocity",
+                "wavelength-selection": "Wavelength"
+            }
+
+            const titleSymbolMap = {
+                "amplitude-selection": "A",
+                "frequency-selection": "f",
+                "velocity-selection": "v",
+                "wavelength-selection": "λ"
+            }
+
+            const contentMap = {
+                "amplitude-selection": "Amplitude is the wave's maximum displacement, the higher the amplitude, the more energy the wave carries. The energy of the wave is proportional to the square of the amplitude. It is measured in various units depending on the type of wave.<br><br>In light, amplitude affects intensity or brightness. It is commonly measured in electric field strength (Volts per meter, V/m).<br><br>In sound, amplitude corresponds to loudness and is expressed as pressure. It is measured in decibels (dB), which represents perceived loudness on a logarithmic scale.",
+                "frequency-selection": "Frequency is the number of wave cycles that pass a given point in a second. It is measured in hertz (Hz) where one hertz equals one cycle per second. Higher frequencies correspond to shorter wavelengths as frequency and wavelength are inversely proportional. <br><br> In light, frequency is relative to color. Higher frequencies correspond to shorter wavelengths, resulting in cooler colors like blue and violet, while lower frequencies correspond to longer wavelengths, producing warmer colors like red and orange. <br><br> In sound, frequency determines pitch, measured by the number of vibrations of a sound wave per second in hertz. Higher frequencies produce high-pitched sounds, while lower frequencies produce low-pitched ones.",
+                "velocity-selection": "Velocity is the speed of a wave. The measurement of a wave's velocity varies depending on the type of wave and the medium being propagated. <br><br> The speed of light waves through a medium. In a vacuum, it is about 300,000 kilometers per second, slowing in denser materials like water or glass. <br><br> The speed of sound waves is influenced by the medium's density and elasticity. In air, the speed is about 343 meters per second, and it is generally faster in solids and liquids.",
+                "wavelength-selection": "Wavelength is the distance between two consecutive points on a wave. Waves with shorter wavelengths carry more energy than those with longer ones. Higher wavelengths correspond to shorter frequencies as wavelength and frequency are inversely proportional.<br><br> In light, wavelength determines color. Shorter wavelengths produce cooler colors, while longer wavelengths create warmer ones. Higher-energy lightwaves, those with shorter wavelengths, produce higher temperatures as they are more energetic. For example, blue stars are much hotter than red stars. <br><br>In sound, wavelength is relative to pitch with typical wavelengths in air spanning from a few centimeters for high-pitched sounds, to several meters for lower-pitched ones. In music, a high note has a much shorter wavelength than one a few octaves lower."
+            };
+
+            document.querySelectorAll('.AFVW-grid-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    document.querySelectorAll('.AFVW-grid-item').forEach(gridItem => {
+                        gridItem.classList.remove('active', 'hoverable-item');
+                        gridItem.classList.add('hoverable-item-deep-blue');
+                        gridItem.querySelector('p').classList.remove('active');
+                    });
+
+                    item.classList.add('active', 'hoverable-item');
+                    item.classList.remove('hoverable-item-deep-blue');
+                    item.querySelector('p').classList.add('active');
+
+                    document.getElementById('anatomy-title').innerHTML = titleMap[item.id];
+                    document.getElementById('anatomy-title-symbol').innerHTML = titleSymbolMap[item.id];
+                    document.getElementById('anatomy-paragraph').innerHTML = contentMap[item.id];
+                });
+            });
+
+            function resetDefaults() {
+                amplitudeS = 50;
+                frequencyS = 1;
+                wavelengthS = 160;
+                velocityS = 1.6;
+                document.getElementById('solo-amplitude').value = 50;
+                document.getElementById('solo-wavelength').value = 1.6;
+                document.getElementById('solo-frequency').value = 1;
+                document.getElementById('solo-velocity').value = 1.6;
+            }
+
+            document.getElementById('amplitude-selection').addEventListener('click', () => {
+                document.getElementById('solo-amplitude').classList.remove('inactive');
+                document.getElementById('solo-wavelength').classList.add('inactive');
+                document.getElementById('solo-frequency').classList.add('inactive');
+                document.getElementById('solo-velocity').classList.add('inactive');
+                resetDefaults();
+            });
+
+            document.getElementById('wavelength-selection').addEventListener('click', () => {
+                document.getElementById('solo-amplitude').classList.add('inactive');
+                document.getElementById('solo-wavelength').classList.remove('inactive');
+                document.getElementById('solo-frequency').classList.add('inactive');
+                document.getElementById('solo-velocity').classList.add('inactive');
+                resetDefaults();
+            });
+
+            document.getElementById('frequency-selection').addEventListener('click', () => {
+                document.getElementById('solo-amplitude').classList.add('inactive');
+                document.getElementById('solo-wavelength').classList.add('inactive');
+                document.getElementById('solo-frequency').classList.remove('inactive');
+                document.getElementById('solo-velocity').classList.add('inactive');
+                resetDefaults();
+            });
+
+            document.getElementById('velocity-selection').addEventListener('click', () => {
+                document.getElementById('solo-amplitude').classList.add('inactive');
+                document.getElementById('solo-wavelength').classList.add('inactive');
+                document.getElementById('solo-frequency').classList.add('inactive');
+                document.getElementById('solo-velocity').classList.remove('inactive');
+                resetDefaults();
+            });
+        });
+    </script>
+</body>
+
+</html>

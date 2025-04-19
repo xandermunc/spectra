@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <title>New Grid</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="padding-top">
+    <header id="header" class="header-grid padding">
+        <div id="logo" class="grid-item header-item span-4 text-underline-parent">
+            <p class="header-icon"><a class="no-style" href="index.html">SPECTRA</a></p>
+        </div>
+        <div class="grid-item header-item non-menu-item non-mobile text-underline-parent">
+            <p class="text-underline"><a class="no-style" href="index.html">Index</a></p>
+        </div>
+        <a href="lessons.html"
+            class="grid-item header-item non-menu-item non-mobile text-underline-parent no-style">
+            <p class="text-underline">Lessons</p>
+        </a>
+        <div class="grid-item header-item non-menu-item non-mobile text-underline-parent">
+            <p class="text-underline">About</p>
+        </div>
+        <div class="grid-item header-item space-between">
+            <div id="search-icon-div" class="non-menu-item">
+                <svg id="mobile-search-icon" xmlns="http://www.w3.org/2000/svg" width="21" height="20"
+                    viewBox="0 0 21 20" fill="none">
+                    <path
+                        d="M19.5 19L15.5 15M9.5 17C5.08172 17 1.5 13.4183 1.5 9C1.5 4.58172 5.08172 1 9.5 1C13.9183 1 17.5 4.58172 17.5 9C17.5 13.4183 13.9183 17 9.5 17Z"
+                        stroke="black" stroke-width="2" />
+                </svg>
+                <div id="search-icon"></div>
+            </div>
+
+            <div id="menu-icon-div" class="non-searchbar-item">
+                <svg id="mobile-menu-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 20 14"
+                    fill="none">
+                    <path d="M0 1H20M0 7H20M0 13H20" stroke="black" stroke-width="1.5" />
+                </svg>
+                <div id="menu-icon"></div>
+            </div>
+        </div>
+    </header>
+
+    <div id="search-container">
+        <input type="text" id="search-bar" placeholder="Search...">
+        <div class="horizontal-scroll">
+            <ul id="search-results"></ul>
+        </div>
+    </div>
+
+    <div id="menu-container">
+        <div class="menu-grid">
+            <div></div>
+            <div>
+                <div class="menu-text-parent large-text-margin-bottom">
+                    <div class="hover-parent">
+                        <a href="posters.html" class="no-style menu-text">Posters</a>
+                    </div>
+                </div>
+                <div class="menu-text-parent large-text-margin-bottom">
+                    <div class="hover-parent">
+                        <a href="/test/index.html" class="no-style menu-text">Videos</a>
+                    </div>
+                </div>
+                <div class="menu-text-parent large-text-margin-bottom">
+                    <div class="hover-parent">
+                        <a href="hes.html" class="no-style menu-text">Interactive</a>
+                    </div>
+                </div>
+                <div class="menu-text-parent large-text-margin-bottom">
+                    <div class="hover-parent">
+                        <a href="hes.html" class="no-style menu-text">3D</a>
+                    </div>
+                </div>
+                <div class="menu-text-parent large-text-margin-bottom">
+                    <div class="hover-parent">
+                        <a href="hes.html" class="no-style menu-text">Lessons</a>
+                    </div>
+                </div>
+                <div class="menu-text-parent large-text-margin-bottom">
+                    <div class="hover-parent">
+                        <a href="hes.html" class="no-style menu-text">Music</a>
+                    </div>
+                </div>
+                <div class="menu-text-parent large-text-margin-bottom">
+                    <div class="hover-parent">
+                        <a href="hes.html" class="no-style menu-text">About</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="chladni"></div>
+
+    <section class="margin-top">
+        <div class="grid padding">
+            <div class="grid-item span-4 centered margin-bottom">
+                <h1 class="text-margin-bottom">Interactive Lessons</h1>
+                <h3 class="align-left">Poster - <i>Light</i></h3>
+            </div>
+            <div class="grid-item span-3 margin-bottom">
+                <p>The Hydrogen Emission Spectrum is a series of spectral lines that are emitted when hydrogen gas is
+                    excited. The spectrum consists of several series, including the Balmer series, which is visible in
+                    the optical range. <br><br>The Balmer series is responsible for the colors seen in hydrogen gas
+                    discharge tubes, and it provides important information about the energy levels of hydrogen atoms.
+                </p>
+            </div>
+        </div>
+
+        <div class="half-large-video margin-bottom">
+            <video autoplay muted loop playsinline>
+                <source src="videos/2.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="grid padding margin-bottom">
+            <div class="span-1"></div>
+            <div class="grid-item span-6">
+                <a href="introduction.html"
+                    class="border-padding top-border bottom-border no-style large-hoverable-text-underline-parent glossary">
+                    <span style="font-size: 4rem; font-weight: 500;">Intro to Waves</span>
+                    <div class="canvas">
+                        <div id="glossary"></div>
+                    </div>
+                </a>
+                <a href="introduction-to-waves.html"
+                    class="border-padding bottom-border no-style large-hoverable-text-underline-parent orange atoms">
+                    <span style="font-size: 4rem; font-weight: 500;">Superposition</span>
+                    <!-- <div class="canvas">
+                    </div> -->
+                </a>
+                <a href="introduction-to-waves.html"
+                    class="border-padding bottom-border no-style large-hoverable-text-underline-parent pink circles">
+                    <span style="font-size: 4rem; font-weight: 500;">Atoms</span>
+                    <!-- <div class="canvas">
+                        <div id="circles"></div>
+                    </div> -->
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+    </section>
+
+    <footer class="grid padding">
+        <div class="grid-item header-item span-4">
+            <p class="header-icon light">XANDER MUNC</p>
+        </div>
+        <div class="non-mobile grid-item header-item span-4 flex-end">
+            <a class="light">xandermunc.art</a>
+            <a class="light">xandermunc@gmail.com</a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/menu-icon.js"></script>
+    <script src="js/search-icon.js"></script>
+    <!-- <script src="chladni.js"></script> -->
+</body>
+
+</html>
