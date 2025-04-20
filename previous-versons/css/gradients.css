@@ -1,0 +1,81 @@
+.gradient-two {
+    background: linear-gradient(to bottom, var(--blue), var(--light-blue));
+    background-attachment: fixed;
+}
+
+.gradient-one {
+    background: linear-gradient(to bottom, var(--deep-blue), var(--blue-two), var(--pink));
+    background-attachment: fixed;
+    border-bottom: var(--border-width) var(--black) solid;
+}
+
+/* .gradient-three {
+    background: linear-gradient(to bottom, var(--white), var(--light-blue), var(--blue));
+    background-attachment: fixed;
+    border-bottom: var(--border-width) var(--black) solid;
+} */
+
+.gradient-three {
+    /* background: linear-gradient(to bottom, var(--white), var(--blue), var(--blue-two)); */
+    background: linear-gradient(to bottom, var(--white), var(--input-color), var(--blue-two));
+    background-attachment: fixed;
+    border-bottom: var(--border-width) var(--black) solid;
+}
+
+.gradient-five {
+    /* background: radial-gradient(circle at top, var(--blue) 0%, transparent 50%),
+        linear-gradient(to top, var(--white), var(--light-blue), var(--blue)); */
+    background: radial-gradient(circle at top, var(--input-color) 0%, transparent 50%),
+        linear-gradient(to top, var(--white), var(--light-blue), var(--input-color));
+    background-attachment: fixed;
+    border-bottom: var(--border-width) var(--black) solid;
+}
+
+.gradient-four {
+    background: radial-gradient(circle at top, var(--pink) 0%, transparent 50%),
+        linear-gradient(to bottom, var(--pink), var(--deep-blue), var(--blue));
+    background-attachment: fixed;
+    border-bottom: var(--border-width) var(--black) solid;
+}
+
+/* .gradient-four {
+    position: relative;
+    background: 
+        radial-gradient(circle at center, var(--red) 10px, transparent 11px),
+        linear-gradient(to bottom, var(--pink), var(--deep-blue), var(--blue));
+    background-attachment: fixed;
+    border-bottom: var(--border-width) var(--black) solid;
+} */
+
+/* 
+.gradient-one {
+    position: relative; 
+    width: 100vw; 
+    overflow: hidden; 
+}
+
+.gradient-one::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, var(--black), var(--deep-blue), var(--pink));
+    z-index: -1; 
+}
+
+.gradient-one::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../Pink.png");
+    background-size: cover; 
+    background-position: center; 
+    mix-blend-mode:hard-light; 
+    z-index: 0; 
+    pointer-events: none; 
+} */

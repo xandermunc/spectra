@@ -1,0 +1,232 @@
+h1 {
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: var(--large-paragraph-font-size);
+}
+
+p {
+    font-weight: 100;
+    font-size: var(--header-button-font-size);
+    /* font-size: var(--paragraph-font-size); */
+    font-family: Lexend-Light;
+    letter-spacing: 0.5px;
+}
+
+strong {
+    font-weight: 500;
+    color: var(--blue);
+}
+
+strong.red {
+    font-weight: 500;
+    color: var(--red);
+}
+
+a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+h1.white {
+    color: var(--white);
+}
+
+.huge-text {
+    font-size: 5em;
+    font-weight: 600;
+}
+
+h1.section-title {
+    display: inline-block;
+    border-bottom: var(--border-width) solid var(--black);
+    padding-bottom: 4px;
+    font-size: var(--section-title-font-size);
+    font-weight: 500;
+    margin-top: var(--header-height);
+    margin-bottom: calc(var(--paragraph-font-size) * 2);
+}
+
+h2.section-title {
+    display: inline-block;
+    border-bottom: var(--border-width) solid var(--black);
+    padding-bottom: 4px;
+    font-size: var(--section-title-font-size);
+    font-weight: 500;
+    margin-top: var(--header-height);
+    padding-bottom: var(--paragraph-font-size);
+}
+
+span.inter,
+h1.inter {
+    font-family: inter !important;
+}
+
+p.paragraph {
+    font-size: var(--paragraph-font-size);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    padding-bottom: var(--paragraph-font-size);
+}
+
+p.paragraph.white {
+    color: var(--white);
+}
+
+a.white {
+    color: var(--white) !important;
+}
+
+.big-header {
+    font-family: lexend-semi;
+    font-size: var(--big-header-font-size);
+    margin-bottom: var(--margin-bottom);
+    padding-top: 80px;
+}
+
+.big-header.underline {
+    display: inline-block;
+    font-family: lexend-semi;
+    font-size: var(--big-header-font-size);
+    /* margin-bottom: var(--margin-bottom); */
+    padding-top: 80px;
+    padding-bottom: 4px;
+    border-bottom: var(--border-width) solid var(--black);
+    margin-bottom: calc(var(--paragraph-font-size) * 2);
+}
+
+p.large-text-paragraph {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: var(--one-third);
+    font-size: var(--large-paragraph-font-size);
+    /* letter-spacing: 0.5px; */
+    /* line-height: 1.3rem; */
+}
+
+/* TEXT HOVER STATES */
+
+.hoverable-text:hover {
+    color: var(--blue) !important;
+}
+
+.hoverable-text-orange:hover {
+    color: var(--orange) !important;
+}
+
+.hoverable-text-green:hover {
+    color: var(--green) !important;
+}
+
+.hoverable-text-white:hover {
+    color: var(--white);
+}
+
+.hoverable-text-white.active {
+    color: var(--white);
+}
+
+p.hoverable-text-underline {
+    position: relative;
+    display: inline-block;
+}
+
+p.hoverable-text-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: var(--border-width);
+    background-color: var(--black);
+    opacity: 0;
+    transform: scaleX(0);
+    transition: var(--ease-time) ease all;
+}
+
+p.hoverable-text-underline.black::after {
+    background-color: var(--white);
+}
+
+.hoverable-text-underline-parent:hover p.hoverable-text-underline::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.large-hoverable-text-underline-parent {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.large-hoverable-text-underline-parent span {
+    position: relative;
+    display: inline-block;
+}
+
+.large-hoverable-text-underline-parent span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3.6em;
+    font-size: 1.2rem;
+    font-family: Lexend;
+    white-space: nowrap;
+    text-align: left;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.large-hoverable-text-underline-parent.glossary span::before {
+    content: "Learn the basics of waves and their vocab";
+}
+
+.large-hoverable-text-underline-parent.atoms span::before {
+    content: "Play with atoms and their quantum structure";
+}
+
+.large-hoverable-text-underline-parent.circles span::before {
+    content: "Discover the connections between everything with circles";
+}
+
+.large-hoverable-text-underline-parent span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--blue);
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.large-hoverable-text-underline-parent.blue span::after {
+    background-color: var(--blue);
+}
+
+.large-hoverable-text-underline-parent.orange span::after {
+    background-color: var(--orange);
+}
+
+.large-hoverable-text-underline-parent.pink span::after {
+    background-color: var(--pink);
+}
+
+.large-hoverable-text-underline-parent:hover span::before {
+    opacity: 1;
+}
+
+.large-hoverable-text-underline-parent:hover span::after {
+    transform: scaleX(1);
+}
+
+.double-title-text {
+    font-family: inter-bold;
+    font-size: var(--double-title-font-size);
+}
+

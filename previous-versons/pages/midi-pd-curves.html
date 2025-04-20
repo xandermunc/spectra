@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parametric Curves</title>
+    <!-- <link rel="stylesheet" href="../../html/style-guide/styles.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header_footer.css">
+    <link rel="stylesheet" href="../css/text.css">
+    <link rel="stylesheet" href="../css/grids.css">
+    <link rel="stylesheet" href="../css/orbit_text.css">
+    <link rel="stylesheet" href="../css/parallax_text.css">
+    <link rel="stylesheet" href="../css/svg_arrow_circle.css">
+    <link rel="stylesheet" href="../css/buttons.css">
+    <!-- <link rel="stylesheet" href="../css/blur.css"> -->
+    <link rel="stylesheet" href="../css/gradients.css">
+    <link rel="stylesheet" href="../css/sections.css">
+    <link rel="stylesheet" href="../css/images.css">
+    <link rel="stylesheet" href="../css/scrollbar.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/title.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: var(--off-black);
+            overflow: hidden;
+            margin-right: 0;
+        }
+
+        .off-black {
+            border: var(--border-width) solid white;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            width: 100vw;
+        }
+
+        .grid-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - (var(--header-height) * 3));
+            background-color: var(--off-black);
+            border: var(--border-width) solid white;
+            border-left: none;
+            border-top: none;
+            border-bottom: none;
+        }
+
+        .keyboard-div {
+            display: grid;
+            height: calc(var(--header-height) * 2);
+            grid-template-columns: 1fr 2fr;
+            width: 100vw;
+            border-left: none;
+            border-bottom: var(--off-black);
+            border-right: none;
+        }
+
+        .keyboard-div:last-child {
+            border-right: none;
+        }
+
+        .grid-item:last-child {
+            border-right: none;
+        }
+
+        #svgCanvas2 {
+            filter: drop-shadow(0 0 75px #00f);
+        }
+
+        #svgCanvas {
+            filter: drop-shadow(0 0 75px #00f);
+        }
+
+        #startButton {
+            color: white;
+            background-color: #111;
+            border-radius: 20px;
+            width: 100px;
+            height: 50px;
+            border: var(--border-width) solid white;
+        }
+
+        #startButton:hover {
+            scale: 0.9;
+            border-radius: 30px;
+            color: #111;
+        }
+
+        .no-left-border {
+            border-left: none !important;
+        }
+
+        .double-header-height {
+            height: calc(var(--header-height) * 2);
+        }
+
+        .flex-row {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #box-generator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        .wave-box {
+            margin: 10px;
+            width: 300px;
+            height: 50px;
+            background-color: #111;
+            border: var(--border-width) white solid;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="off-black">
+        <div class="header-item">
+            <a href="../landing-page.html" class="white">
+                <h1>SPECTRA</h1>
+            </a>
+        </div>
+        <div class="header-item hoverable-text-underline-parent">
+            <a href="introduction-to-waves.html" class="white">
+                <p class="hoverable-text-underline black">Intro</p>
+            </a>
+        </div>
+        <div class="header-item hoverable-text-underline-parent">
+            <p class="hoverable-text-underline black">Atoms</p>
+        </div>
+        <div class="header-item hoverable-text-underline-parent">
+            <p class="hoverable-text-underline black">Circles</p>
+        </div>
+        <div class="header-item hoverable-text-underline-parent">
+            <p class="hoverable-text-underline black">Sonofunctia</p>
+        </div>
+        <div class="header-item hoverable-text-underline-parent">
+            <p class="hoverable-text-underline black">About</p>
+        </div>
+    </header>
+
+    <div class="grid">
+        <div class="grid-item">
+            <div id="box-generator"></div>
+        </div>
+        <div class="grid-item">
+            <svg id="svgCanvas" width="400" height="400"></svg>
+        </div>
+        <div class="grid-item">
+            <svg id="svgCanvas2" width="400" height="400"></svg>
+        </div>
+    </div>
+
+    <div class="keyboard-div">
+        <div class="header-item double-header-height off-black no-bottom-border no-bottom-border">
+            <canvas id="superposition" width="300" height="400"></canvas>
+        </div>
+        <div class="header-item double-header-height flex-row off-black no-bottom-border">
+            <button id="startButton">Start Audio</button>
+            <div id="arturia"></div>
+        </div>
+    </div>
+    <script src="../js/midi_pd/arturia.js"></script>
+    <script src="../js/midi_pd/parafull.js"></script>
+    <script src="../js/midi_pd/audio.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+span.inter {
+    font-family: inter;
+}
+
+/* body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+} */
+
+canvas {
+    width: 800px;
+    height: 300px;
+    z-index: 2;
+}
+
+#color-rect {
+    position: absolute;
+    width: 800px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(200px);
+    will-change: transform;
+    background-color: var(--input-color);
+    margin-bottom: var(--double-header-height);
+    z-index: -1;
+    transition: none !important;
+}
+
+/* #wavelength-display {
+    width: 430px;
+    font-size: 3em;
+    font-family: system-ui;
+    color: #fff;
+}
+
+.wavelength-display-text {
+    position: absolute;
+    font-size: 3em;
+    font-family: system-ui;
+} */
+
+.centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="range"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 170px;
+    background: white;
+    height: 4px;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-top: var(--large-paragraph-font-size);
+    /* margin-left: 10px; */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+}
+
+/* input[type="range"]::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+}
+
+input[type="range"]::-ms-thumb {
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+} */
+
+label {
+    font-family: Lexend;
+    font-size: var(--large-paragraph-font-size);
+    width: var(--double-header-height);
+    color: var(--white);
+}
+
+.wave-control-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 4px;
+    column-gap: var(--half-header-height);
+    /* margin-top: var(--header-height); */
+    margin-bottom: var(--header-height);
+    z-index: 2;
+}
+
+.wave-control-grid-item {
+    width: 170px;
+}
+
+.anatomy-symbol-blur-rect {
+    width: 200px;
+    height: 200px;
+    background-color: var(--white);
+    filter: blur(100px);
+    position: absolute;
+    z-index: 0;
+}
+
+.inactive {
+    display: none;
+}

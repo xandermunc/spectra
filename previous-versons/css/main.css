@@ -1,0 +1,105 @@
+:root {
+    --black: #000;
+    --white: #fff;
+    --grey: #666;
+    --off-black: #101010;
+    --off-white: #e1e1e1;
+    --deep-red: #900;
+    --deep-blue: #009;
+    --blue-two: #03c;
+    --red: #f00;
+    --blue: #09f;
+    --light-blue: #7cf;
+    --orange: #f90;
+    --green: #090;
+    --pink: #f9f;
+    --cyan: #099;
+    --purple: #90f;
+    /* 90f / 60f */
+    --light-green: #9f0;
+    --light-purple: #99f;
+    --header-height: 90px;
+    --double-header-height: calc(var(--header-height) * 2);
+    --triple-header-height: calc(var(--header-height) * 3);
+    --half-header-height: calc(var(--header-height) / 2);
+    --border-width: 1.5px;
+    --margin-bottom: 10px;
+    --section-title-font-size: 1.5rem;
+    --large-paragraph-font-size: 1.2rem;
+    --paragraph-font-size: 1.1rem;
+    --big-header-font-size: 4rem;
+    --header-button-font-size: 1rem;
+    --title-font-size: 10rem;
+    --double-title-font-size: calc(var(--title-font-size) * 2);
+    --ease-time: 0.2s;
+    --two-header-divs: calc(100vw / 8 * 2);
+    --one-third: calc(100vw / 3);
+    --two-thirds: calc(100vw / 3 * 2);
+}
+
+@font-face {
+    font-family: 'Lexend';
+    src: url('../fonts/Lexend/Lexend-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lexend-Light';
+    src: url('../fonts/Lexend/static/Lexend-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lexend-semi';
+    src: url('../fonts/Lexend/static/Lexend-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'inter-bold';
+    src: url('../fonts/Inter/static/Inter_18pt-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'inter';
+    src: url('../fonts/Inter/static/Inter_18pt-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    overscroll-behavior: none;
+    font-family: Lexend;
+    transition: var(--ease-time) ease all, 0s ease width, 0s ease height;
+}
+
+/* .cursor {
+    position: fixed;
+    z-index: 100;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #60f;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: none;
+} */
+
+body {
+    overflow-x: hidden;
+    padding-top: var(--header-height);
+    background: var(--white);
+    font-size: 1em;
+    font-weight: 100;
+    margin-right: 10px;
+}
