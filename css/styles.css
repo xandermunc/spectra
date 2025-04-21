@@ -1125,3 +1125,8 @@ header.black {
     background-color: var(--dark-grey-blueish) !important;
     color: var(--white) !important;
 }
+
+.left-text {
+    flex: 1 1 100%;
+    box-sizing: border-box;
+}
