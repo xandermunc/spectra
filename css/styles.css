@@ -68,7 +68,7 @@
 
 @font-face {
     font-family: 'Neulis';
-    src: url('../fonts/Neulis/fonnts.com-Neulis_Sans_Light.otf') format('opentype');
+    src: url('../fonts/Neulis/fonnts.com-Neulis_Neue_Light.otf') format('opentype');
     font-weight: 300;
     font-style: normal;
 }
@@ -98,7 +98,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    user-select: none;
+    /* user-select: none; */
     /* overscroll-behavior: none; */
     font-family: 'Lexend', sans-serif;
     transition: all 0.2s ease;
@@ -185,11 +185,6 @@ p {
     line-height: 1.8rem;
 }
 
-.sans {
-    font-family: 'Neulis-Sans', sans-serif;
-    font-weight: 300;
-}
-
 p.caption {
     font-size: var(--caption-text-size);
     letter-spacing: 0.05rem;
@@ -215,6 +210,11 @@ p.header-icon {
 
 p.grey {
     color: var(--grey);
+    font-family: "Neulis-Sans", sans-serif;
+}
+
+p.paragraph {
+    font-family: "Neulis-Sans", sans-serif;
 }
 
 .white {
@@ -524,7 +524,7 @@ video {
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
+    width: 100vw;
     display: none;
     list-style: none;
     margin-top: calc(var(--grid-gap) / 2);
@@ -704,22 +704,30 @@ video {
 
 
 /* SEARCH BACKGROUNDS */
-
-.interactive-bg {
-    background-image: url('../images/test2.png');
+/* 
+.hydrogen-emission-bg {
+    background-image: url('../images/HES.jpg');
 }
 
-.installation-bg {
-    background-image: url('../images/test.png');
+.electron-probability-bg {
+    background-image: url('../images/EPD.jpg');
 }
+
+.percentage-of-our-universe-bg {
+    background-image: url('../images/EU4.jpg');
+} */
 
 .quanta-and-fields-bg {
     background-image: url('../images/Quanta-and-Fields_Cover\ copy.jpg');
 }
 
-.interactive-bg,
-.installation-bg,
-.quanta-and-fields-bg {
+@media (max-width: 600px) {
+    #search-results li {
+        background-image: none !important;
+    }
+}
+
+.search-item-bg {
     position: relative;
     background-size: cover;
     background-position: center;
@@ -728,9 +736,7 @@ video {
     color: var(--white) !important;
 }
 
-.interactive-bg::after,
-.installation-bg::after,
-.quanta-and-fields-bg::after {
+.search-item-bg::after {
     content: "";
     position: absolute;
     top: 0;
@@ -742,9 +748,7 @@ video {
     z-index: 1;
 }
 
-.interactive-bg:hover::after,
-.installation-bg:hover::after,
-.quanta-and-fields-bg:hover::after {
+.search-item-bg:hover::after {
     background: rgba(0, 0, 0, 0.3);
 }
 

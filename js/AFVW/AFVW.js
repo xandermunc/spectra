@@ -60,7 +60,7 @@ velocitySlider.addEventListener('input', function () {
 // const minValue = velocitySlider.min;
 // const maxValue = velocitySlider.max;
 
-// // // // // // // // // // // // // // // // // // // 
+// // // // // // // // // // // // // // // // // // // CANVAS BELOW (CHANGE TO p5 WAVE SOON PLZ)
 
 const canvas = document.getElementById("wave");
 const ctx = canvas.getContext("2d");
