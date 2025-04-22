@@ -5,6 +5,7 @@
     --paragraph-text-size: 1.2rem;
     --caption-text-size: 1rem;
     --grey: #808080;
+    --light-grey: #c8c8c8;
     --dark-grey: #1e1e1e;
     --dark-grey-blueish: #141420;
     --black: #000;
@@ -524,10 +525,9 @@ video {
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100vw;
+    width: 100%;
     display: none;
     list-style: none;
-    margin-top: calc(var(--grid-gap) / 2);
     overflow-y: auto;
     border-radius: 0 0 20px 20px;
     z-index: 1003;

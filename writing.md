@@ -2,6 +2,7 @@
 
 ## Projects
 - Hydrogen Emission Spectrum 
+First of a four part poster series, this poster answers the questions: How do atoms create light? And what is the Balmer Series?
 - Electron Probability Density 
 - Percentage of our Universe
 - This is the Size of an Atom
@@ -27,3 +28,10 @@ To learn more about the projects check out the about page.
 
 ### The Projects 
 SPECTRA explores work in motion, information design, typographic design, book covers, 3D, interactivity, and more. The gallery below holds all projects and explorations. To check out the interactive lessons, begin exploring the lessons tab above.
+
+
+## Hydrogen Emission Spectrum 
+
+he Hydrogen Emission Spectrum is a series of spectral lines that are emitted when hydrogen gas is excited. The spectrum consists of several series, including the Balmer series, which is visible in the optical range.
+
+The Balmer series is responsible for the colors seen in hydrogen gas discharge tubes, and it provides important information about the energy levels of hydrogen atoms.

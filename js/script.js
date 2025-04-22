@@ -125,6 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const matched = keywords.filter(keyword => keyword.includes(query));
 
             if (matched.length > 0) {
+                const matched = keywords.filter(keyword => keyword.includes(query)).slice(0, 4);
                 matched.forEach(word => {
                     const li = document.createElement("li");
                     li.textContent = word;
