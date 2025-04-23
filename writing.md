@@ -29,9 +29,19 @@ To learn more about the projects check out the about page.
 ### The Projects 
 SPECTRA explores work in motion, information design, typographic design, book covers, 3D, interactivity, and more. The gallery below holds all projects and explorations. To check out the interactive lessons, begin exploring the lessons tab above.
 
+## Overtone Series 
+
+### Poster
+
+The Overtone Series, also known as the Harmonic Series, is a natural phenomenon in which a single pitch, the fundamental frequency, produces additional harmonic frequencies above it. 
+
+This occurs in all natural forms of sound that can be identified by pitch, as they produce a fundamental frequency.
+
+These overtones occur due to the physical resonant properties of the sound's source, forming the foundation of musical acoustics, timbre, and harmony.
+
 
 ## Hydrogen Emission Spectrum 
 
-he Hydrogen Emission Spectrum is a series of spectral lines that are emitted when hydrogen gas is excited. The spectrum consists of several series, including the Balmer series, which is visible in the optical range.
+The Hydrogen Emission Spectrum is a series of spectral lines that are emitted when hydrogen gas is excited. The spectrum consists of several series, including the Balmer series, which is visible in the optical range.
 
 The Balmer series is responsible for the colors seen in hydrogen gas discharge tubes, and it provides important information about the energy levels of hydrogen atoms.

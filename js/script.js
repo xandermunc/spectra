@@ -35,8 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchBar = document.getElementById("search-bar");
     const searchResults = document.getElementById("search-results");
 
-    let noResultsFound = false;
-
     const keywords = [
         "hydrogen emission spectrum", "electron probability density", "percentage of our universe", "this is the size of an atom",
         "periodic tree of elements", "periodic tree of emissions", "quanta and fields", "waves in an impossible sea", "sonofunctial curves",
@@ -79,15 +77,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (e.key === "Enter") {
             const query = searchBar.value.trim();
             if (query.length === 0) return;
-
-            if (!noResultsFound) {
-                document.getElementById("search-container").classList.add("active");
-                document.getElementById("search-results").classList.add("active");
-                if (!isMobileDevice()) {
-                    const audio = new Audio("audio/F2.wav");
-                    audio.play();
-                }
-            }
         }
     });
 
@@ -105,25 +94,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const searchContainer = document.getElementById("search-container");
         const searchResultsDiv = document.getElementById("search-results");
-
-        const wasActive = searchContainer.classList.contains("active") || searchResultsDiv.classList.contains("active");
-
         searchContainer.classList.remove("active");
-        searchResultsDiv.classList.remove("active");
-
-        if (wasActive) {
-            if (!isMobileDevice()) {
-                const audio = new Audio("audio/Eb2.wav");
-                audio.play();
-            }
-        }
-
+        searchResultsDiv.classList.remove("active"); 
         const query = searchBar.value.toLowerCase();
         searchResults.innerHTML = "";
 
         if (query.length > 0) {
-            const matched = keywords.filter(keyword => keyword.includes(query));
-
+            const matched = keywords.filter(keyword => keyword.includes(query)).slice(0, 4);
+            searchContainer.classList.add("active");
+            searchResultsDiv.classList.add("active");
+            
             if (matched.length > 0) {
                 const matched = keywords.filter(keyword => keyword.includes(query)).slice(0, 4);
                 matched.forEach(word => {
@@ -225,17 +205,19 @@ document.addEventListener('DOMContentLoaded', function () {
                     searchResults.appendChild(li);
                 });
                 searchResults.style.display = "block";
-                noResultsFound = false;
             } else {
                 const li = document.createElement("li");
                 li.textContent = "No results found.";
                 li.style.color = "grey";
                 searchResults.appendChild(li);
                 searchResults.style.display = "block";
-                noResultsFound = true;
             }
         } else {
             searchResults.style.display = "none";
+            if (!isMobileDevice()) {
+                const audio = new Audio("audio/Eb2.wav");
+                audio.play();
+            }
         }
     });
 
