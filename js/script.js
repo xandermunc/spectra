@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         li.classList.add("hydrogen-emission-bg");
                         li.classList.add("search-item-bg");
                         li.addEventListener("click", () => {
-                            window.location.href = "hes.html";
+                            window.location.href = "hydrogen-emission-spectrum.html";
                         });
                     } else if (word === "electron probability density") {
                         li.classList.add("electron-probability-bg");

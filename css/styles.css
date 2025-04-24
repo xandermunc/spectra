@@ -182,6 +182,7 @@ p {
     font-weight: 300;
     letter-spacing: 0.05rem;
     line-height: 1.8rem;
+    cursor: default;
 }
 
 p.caption {
@@ -193,7 +194,11 @@ p.caption {
 a {
     /* font-family: 'Neulis', sans-serif; */
     /* font-weight: 300; */
-    cursor: pointer;
+    cursor: pointer !important;
+}
+
+a p {
+    cursor: pointer !important;
 }
 
 a.bold {
@@ -732,6 +737,7 @@ video {
 .hydrogen-emission-bg {
     background-image: url('../images/Hydrogen-Emission-Spectrum/Hydrogen-Emission-Spectrum_Search-Bar-Square.jpg');
 }
+
 /* 
 .electron-probability-bg {
     background-image: url('../images/EPD.jpg');
@@ -743,12 +749,6 @@ video {
 
 .quanta-and-fields-bg {
     background-image: url('../images/Quanta-and-Fields_Cover\ copy.jpg');
-}
-
-@media (max-width: 600px) {
-    #search-results li {
-        background-image: none !important;
-    }
 }
 
 .search-item-bg {
@@ -881,6 +881,9 @@ video {
     #search-results.active li {
         width: 200px;
         height: 200px;
+        word-wrap: break-word;
+        white-space: normal;
+        overflow: hidden;
     }
 
     .menu-grid {

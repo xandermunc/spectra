@@ -65,3 +65,14 @@ Higher orbitals emit photons of shorter wavelengths, producing bluer light. Most
 Each orbital change releases a specific amount of energy (eV)
 
 which creates a specific wavelength of light (nm)
+
+
+## Electron Probability Distribution 
+
+Electrons in atoms are described by quantum mechanics as existing in regions of space called orbitals, where the probability of finding an electron is highest.
+
+Unlike classical orbits, electrons do not follow fixed paths but instead form “clouds” around the nucleus, with denser regions indicating higher probabilities.
+
+1s, 2s, and 3s, are the simplest electron formations.
+
+Probability distribution for the spherically symmetric 1s, 2s, and 3s wave functions for the hydrogen atom.
