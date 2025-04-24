@@ -11,7 +11,7 @@ let sketch = (p) => {
 
   p.setup = function () {
     p.pixelDensity(2);
-    const canvas = p.createCanvas(35, 50);
+    const canvas = p.createCanvas(50, 50);
     canvas.parent('search-icon');
 
     canvas.mousePressed(() => {
