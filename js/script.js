@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchResults = document.getElementById("search-results");
 
     const keywords = [
-        "hydrogen emission spectrum", "electron probability density", "percentage of our universe", "this is the size of an atom",
+        "hydrogen emission spectrum", "electron probability distribution", "percentage of our universe", "this is the size of an atom",
         "periodic tree of elements", "periodic tree of emissions", "quanta and fields", "waves in an impossible sea", "sonofunctial curves",
         "sonofunctial notation", "chladni resonance field", "spectra website", "sonofunctial typography: oscilla", "2D animation"
     ];
@@ -121,11 +121,11 @@ document.addEventListener('DOMContentLoaded', function () {
                         li.addEventListener("click", () => {
                             window.location.href = "hydrogen-emission-spectrum.html";
                         });
-                    } else if (word === "electron probability density") {
+                    } else if (word === "electron probability distribution") {
                         li.classList.add("electron-probability-bg");
                         li.classList.add("search-item-bg");
                         li.addEventListener("click", () => {
-                            window.location.href = "electron_probability_density.html";
+                            window.location.href = "electron-probability-distribution.html";
                         });
                     } else if (word === "percentage of our universe") {
                         li.classList.add("percentage-of-our-universe-bg");

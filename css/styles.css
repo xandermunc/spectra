@@ -369,12 +369,20 @@ img.no-margin-bottom {
     margin-bottom: 0 !important;
 }
 
+.adapted-margin-top {
+    margin-top: calc(var(--header-height) - var(--grid-gap));
+}
+
 img.grid-margin-bottom {
     margin-bottom: var(--grid-gap) !important;
 }
 
 video {
     margin-bottom: var(--paragraph-text-size);
+}
+
+video.no-margin-bottom {
+    margin-bottom: 0 !important;
 }
 
 .large-video {
@@ -738,12 +746,12 @@ video {
     background-image: url('../images/Hydrogen-Emission-Spectrum/Hydrogen-Emission-Spectrum_Search-Bar-Square.jpg');
 }
 
-/* 
+
 .electron-probability-bg {
-    background-image: url('../images/EPD.jpg');
+    background-image: url('../images/Electron-Probability-Distribution/Electron-Probability-Density_Search-Bar-Square.jpg');
 }
 
-.percentage-of-our-universe-bg {
+/* .percentage-of-our-universe-bg {
     background-image: url('../images/EU4.jpg');
 } */
 
@@ -783,6 +791,11 @@ video {
     display: none;
 }
 
+.adapted-mobile-spacer {
+    height: calc(var(--header-height) - var(--grid-gap));
+    display: none;
+}
+
 #mobile-menu-icon {
     display: none;
 }
@@ -802,6 +815,10 @@ video {
     }
 
     .mobile-spacer {
+        display: block;
+    }
+    
+    .adapted-mobile-spacer {
         display: block;
     }
 
