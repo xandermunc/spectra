@@ -42,6 +42,26 @@ These overtones occur due to the physical resonant properties of the sound's sou
 
 ## Hydrogen Emission Spectrum 
 
-The Hydrogen Emission Spectrum is a series of spectral lines that are emitted when hydrogen gas is excited. The spectrum consists of several series, including the Balmer series, which is visible in the optical range.
+### Description
 
-The Balmer series is responsible for the colors seen in hydrogen gas discharge tubes, and it provides important information about the energy levels of hydrogen atoms.
+First of a four part poster series, this poster answers the questions: How do atoms create light? And what is the Balmer Series?
+
+### Landing
+
+The Hydrogen Emission Spectrum is a series of spectral lines produced when hydrogen gas absorbs and releases energy in the form of light. The spectrum consists of several series, including the Balmer series, which is the only series of hydrogen's emissions in the visible light spectrum.
+ 
+These specific emission colors are unique to hydrogen and reveal the discrete energy transitions of its electrons and the quantized nature of electron movement.
+
+Answering the question: "How do atoms create light?" by using Hydrogen, the most abundant element, as an example. I set out to combine the separated "map" and "graph" approaches to representing this data into one hybrid form.
+
+### Poster
+
+Atoms emit light when electrons transition to lower energy levels around the atom, called orbitals. When electrons absorb energy, they move to higher orbitals, entering an excited state.
+
+Each orbital has a specific energy level. To move between orbitals, an electron must absorb or release a precise amount of energy that matches the difference between those energy levels.
+
+Higher orbitals emit photons of shorter wavelengths, producing bluer light. Most emission wavelengths fall outside the visible spectrum, into ultraviolet and infrared ranges. In hydrogen, visible light comes from the Balmer series, where electrons transition to the second orbital.
+
+Each orbital change releases a specific amount of energy (eV)
+
+which creates a specific wavelength of light (nm)

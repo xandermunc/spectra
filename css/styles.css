@@ -124,8 +124,6 @@ footer {
     bottom: 0;
     width: 100vw;
     height: var(--header-height) !important;
-    background: var(--black);
-    color: var(--white);
     padding-bottom: 100px !important;
 }
 
@@ -214,8 +212,8 @@ p.grey {
     font-family: "Neulis-Sans", sans-serif;
 }
 
-p.paragraph {
-    font-family: "Neulis-Sans", sans-serif;
+.paragraph {
+    font-family: "Neulis-Sans", sans-serif !important;
 }
 
 .white {
@@ -362,6 +360,14 @@ img {
     margin-bottom: var(--paragraph-text-size);
 }
 
+img.no-margin-bottom {
+    margin-bottom: 0 !important;
+}
+
+img.grid-margin-bottom {
+    margin-bottom: var(--grid-gap) !important;
+}
+
 video {
     margin-bottom: var(--paragraph-text-size);
 }
@@ -372,6 +378,23 @@ video {
     width: 100vw !important;
     height: calc(100vh - var(--header-height)) !important;
     object-fit: cover;
+}
+
+.large-image {
+    margin-top: var(--header-height);
+    overflow: hidden;
+    width: 100vw !important;
+    height: auto !important;
+    margin-bottom: none !important;
+    /* height: calc(100vh - var(--header-height)) !important; */
+}
+
+.large-image img {
+    width: 100vw !important;
+    height: auto !important;
+    margin-bottom: none !important;
+    object-fit: cover;
+    display: block;
 }
 
 .large-video video {
@@ -459,6 +482,7 @@ video {
 }
 
 .space-between {
+    display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
@@ -704,11 +728,11 @@ video {
 
 
 /* SEARCH BACKGROUNDS */
-/* 
-.hydrogen-emission-bg {
-    background-image: url('../images/HES.jpg');
-}
 
+.hydrogen-emission-bg {
+    background-image: url('../images/Hydrogen-Emission-Spectrum/Hydrogen-Emission-Spectrum_Search-Bar-Square.jpg');
+}
+/* 
 .electron-probability-bg {
     background-image: url('../images/EPD.jpg');
 }
@@ -823,7 +847,7 @@ video {
     }
 
     .non-mobile {
-        display: none;
+        display: none !important;
     }
 
     .span-4 {
