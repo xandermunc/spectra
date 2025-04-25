@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-    <title>Hydrogen Emission Spectrum | Xander Munc</title>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <title>Electron Probability Distribution | Xander Munc</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -15,13 +17,13 @@
             <p class="header-icon"><a class="no-style" href="index.html">SPECTRA</a></p>
         </div>
         <div class="grid-item header-item non-menu-item non-mobile text-underline-parent">
-            <p class="text-underline">Index</p>
+            <p class="text-underline"><a class="no-style" href="index.html">Index</a></p>
         </div>
-        <div class="grid-item header-item non-menu-item non-mobile text-underline-parent">
-            <p class="text-underline">Lessons</p>
-        </div>
-        <div class="grid-item header-item non-menu-item non-mobile text-underline-parent">
+        <a href="lessons.html" class="grid-item header-item non-menu-item non-mobile text-underline-parent no-style">
             <p class="text-underline">About</p>
+        </a>
+        <div class="grid-item header-item non-menu-item non-mobile text-underline-parent">
+            <p class="text-underline">Interactive</p>
         </div>
         <div class="grid-item header-item space-between">
             <div id="search-icon-div" class="non-menu-item">
@@ -62,27 +64,32 @@
                 </div>
                 <div class="menu-text-parent large-text-margin-bottom">
                     <div class="hover-parent">
-                        <a href="hes.html" class="no-style menu-text">Videos</a>
+                        <a href="/test/index.html" class="no-style menu-text">Videos</a>
                     </div>
                 </div>
                 <div class="menu-text-parent large-text-margin-bottom">
                     <div class="hover-parent">
-                        <a href="hes.html" class="no-style menu-text">Interactive</a>
+                        <a href="hydrogen-emission-spectrum.html" class="no-style menu-text">Interactive</a>
                     </div>
                 </div>
                 <div class="menu-text-parent large-text-margin-bottom">
                     <div class="hover-parent">
-                        <a href="hes.html" class="no-style menu-text">3D</a>
+                        <a href="hydrogen-emission-spectrum.html" class="no-style menu-text">3D</a>
                     </div>
                 </div>
                 <div class="menu-text-parent large-text-margin-bottom">
                     <div class="hover-parent">
-                        <a href="hes.html" class="no-style menu-text">Lessons</a>
+                        <a href="hydrogen-emission-spectrum.html" class="no-style menu-text">Lessons</a>
                     </div>
                 </div>
                 <div class="menu-text-parent large-text-margin-bottom">
                     <div class="hover-parent">
-                        <a href="hes.html" class="no-style menu-text">About</a>
+                        <a href="hydrogen-emission-spectrum.html" class="no-style menu-text">Music</a>
+                    </div>
+                </div>
+                <div class="menu-text-parent large-text-margin-bottom">
+                    <div class="hover-parent">
+                        <a href="hydrogen-emission-spectrum.html" class="no-style menu-text">About</a>
                     </div>
                 </div>
             </div>
@@ -204,16 +211,16 @@
         <div class="grid padding adapted-margin-top">
             <div class="grid-item span-1"></div>
             <div class="grid-item span-3 centered-horizontally mobile-only">
-                <h2>Gradient Process</h2>
+                <h2>Methods of plotting<br> volumetric data</h2>
             </div>
             <div class="grid-item span-3">
                 <p class="paragraph text-margin-bottom">To find the most effective way to represent this data in 3D, I
-                    explored two methods: an interactive, real-time approach using Processing, and a iterable approach
-                    with Maya. </p>
+                    explored two methods: an interactive, real-time approach using Processing, and a scene-forward
+                    method with Maya.</p>
             </div>
             <div class="grid-item span-1"></div>
             <div class="grid-item span-3 centered-horizontally non-mobile">
-                <h2>Methods of plotting 3D data</h2>
+                <h2>Methods of plotting<br> volumetric data</h2>
             </div>
         </div>
 
@@ -258,11 +265,32 @@
             </div>
         </div>
 
+        <div class="grid padding adapted-margin-top margin-bottom">
+            <div class="grid-item span-1"></div>
+            <div class="grid-item span-3 centered-horizontally non-mobile">
+                <h2>The Schrödinger Equation</h2>
+                <!-- <p>How the quantum state of a system changes over time.</p><br>
+                <p>In its time-dependent form, it is written as:<br>iħ ∂Ψ(r, t)/∂t = [-ħ²/2m ∇² + V(r, t) ] Ψ(r, t)</p> -->
+            </div>
+            <div class="grid-item span-4">
+                <p class="paragraph">The Schrödinger equation is a fundamental equation in quantum mechanics that
+                    describes how the quantum state of a particle, like an electron, changes over time. At its core, the
+                    equation combines the energy of the system (both kinetic and potential) and relates it to a
+                    mathematical function called the wavefunction, notated with psi Ψ.
+                    <br><br>The wavefunction contains all the information about
+                    the electron’s possible locations. When you square the wavefunction, you get the probability
+                    density—the likelihood of finding the electron at any given point in space. In short, the
+                    Schrödinger equation is the tool that allows scientists to predict and visualize the complex,
+                    probabilistic behavior of electrons in atoms.
+                </p>
+            </div>
+        </div>
+
         <div class="grid padding margin-bottom">
             <div class="grid-item span-5"></div>
             <div class="grid-item span-3">
                 <div class="space-between">
-                    <a class="underline">
+                    <a class="underline" href="elements-of-our-universe.html">
                         <h2 class="neulis paragraph">Elements of our Universe </h2>
                     </a>
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="22" viewBox="0 0 32 22" fill="none">

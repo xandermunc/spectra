@@ -81,7 +81,9 @@ The unique shapes and distributions of these densities for each energy level and
 
 Answering the question: "Where are you most likely find an electron around at atom?" using Hydrogen, the most abundant element, as an example. Probability density is typically depicted in with two separate information forward approaches: a map of the atom, and a graph of electron density. This poster combines both approaches to unify the picture. 
 
-To find the most effective way to represent this data in 3D, I explored two methods: an interactive, real-time approach using Processing, and a iterable approach with Maya.  
+To find the most effective way to represent this data in 3D, I explored two methods: an interactive, real-time approach using Processing, and a scene-forward method with Maya. 
+
+The Schrödinger equation is a fundamental equation in quantum mechanics that describes how the quantum state of a particle, like an electron, changes over time. At its core, the equation combines the energy of the system (both kinetic and potential) and relates it to a mathematical function called the wavefunction. The wavefunction contains all the information about the electron’s possible locations. When you square the wavefunction, you get the probability density—the likelihood of finding the electron at any given point in space. In short, the Schrödinger equation is the tool that allows scientists to predict and visualize the complex, probabilistic behavior of electrons in atoms.
 
 ### Poster
 
