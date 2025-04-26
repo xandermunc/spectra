@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const searchContainer = document.getElementById("search-container");
         const searchResultsDiv = document.getElementById("search-results");
         searchContainer.classList.remove("active");
-        searchResultsDiv.classList.remove("active"); 
+        searchResultsDiv.classList.remove("active");
         const query = searchBar.value.toLowerCase();
         searchResults.innerHTML = "";
 
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const matched = keywords.filter(keyword => keyword.includes(query)).slice(0, 4);
             searchContainer.classList.add("active");
             searchResultsDiv.classList.add("active");
-            
+
             if (matched.length > 0) {
                 const matched = keywords.filter(keyword => keyword.includes(query)).slice(0, 4);
                 matched.forEach(word => {
@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             window.location.href = "2D_animation.html";
                         });
                     }
-                    
+
 
                     searchResults.appendChild(li);
                 });
@@ -260,4 +260,45 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }, { passive: false });
 
+    // Audio hover functionality
+    const audioHovers = document.querySelectorAll('.audio-hover');
+    audioHovers.forEach(audioHover => {
+        const video = audioHover.querySelector('video');
+        const audioToggle = audioHover.querySelector('.audio-toggle');
+        let canUnmute = false;
+
+        audioToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            canUnmute = !canUnmute;
+            audioToggle.textContent = canUnmute ? 'Mute' : 'Unmute';
+
+            if (canUnmute) {
+                video.muted = false;
+                video.play().catch(() => { });
+            } else {
+                video.muted = true;
+            }
+        });
+
+        audioHover.addEventListener('mouseenter', () => {
+            if (canUnmute) {
+                video.muted = false;
+                video.play().catch(() => { });
+            }
+        });
+
+        audioHover.addEventListener('mouseleave', () => {
+            video.muted = true;
+        });
+    });
+
+
+    // fullscreen hover functionality
+    // document.querySelectorAll('.fullscreen-hover').forEach(hover => {
+    //     hover.addEventListener('click', function(e) {
+    //         // e.stopPropagation(); 
+    //         // const gridItem = this.closest('.grid-item');
+    //         hover.classList.add('active');
+    //     });
+    // });
 });

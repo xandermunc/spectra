@@ -215,7 +215,8 @@ a p {
     cursor: pointer !important;
 }
 
-a.bold {
+a.bold,
+span.bold {
     font-weight: 400;
 }
 
@@ -832,7 +833,7 @@ a.menu-text {
     .mobile-spacer {
         display: block;
     }
-    
+
     .adapted-mobile-spacer {
         display: block;
     }
@@ -1204,4 +1205,110 @@ header.black {
 .left-text {
     flex: 1 1 100%;
     box-sizing: border-box;
+}
+
+.audio-hover:hover {
+    /* background-color: var(--light-grey) !important; */
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1));
+}
+
+.audio-hover:hover video {
+    scale: 0.98;
+    border-radius: 5px;
+}
+
+.audio-hover:hover .audio-toggle {
+    opacity: 1;
+}
+
+.audio-hover {
+    position: relative;
+}
+
+.audio-toggle {
+    position: absolute;
+    right: calc(var(--grid-gap) * 2);
+    top: calc(var(--grid-gap) / 2 * 3) !important;
+    top: 0;
+    width: 100px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 5px;
+    z-index: 100;
+    opacity: 0;
+    font-family: Neulis-Sans-Regular;
+    letter-spacing: 0.05rem;
+}
+
+.audio-toggle:hover {
+    cursor: pointer;
+    border-radius: 10px;
+    scale: 0.90;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1));
+}
+
+.fullscreen-hover {
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.fullscreen-hover:hover {
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1));
+}
+
+.fullscreen-hover:hover .fullscreen-toggle {
+    opacity: 1;
+}
+
+.fullscreen-toggle {
+    position: absolute;
+    right: calc(var(--grid-gap) * 2);
+    top: calc(var(--grid-gap) / 2 * 3) !important;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 5px;
+    z-index: 100;
+    opacity: 0;
+    font-family: Neulis-Sans-Regular;
+    letter-spacing: 0.05rem;
+}
+
+.fullscreen-toggle.active {
+    position: fixed !important;
+    top: 0;
+    right: 0;
+}
+
+.fullscreen-hover.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* overflow: auto; */
+    z-index: 9999;
+    /* background: white; */
+    /* box-sizing: border-box; */
+    transition: 0.2s ease all; 
+}
+
+.fullscreen-hover.active img {
+    width: auto;
+    height: auto;
+    max-width: none;
+    max-height: none;
+    display: block;
+}
+
+.fullscreen-toggle:hover {
+    cursor: pointer;
+    border-radius: 10px;
+    scale: 0.90;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1));
 }
