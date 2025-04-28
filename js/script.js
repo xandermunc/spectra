@@ -37,8 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const keywords = [
         "hydrogen emission spectrum", "electron probability distribution", "elements of our universe", "this is the size of an atom",
-        "periodic tree of elements", "periodic tree of emissions", "quanta and fields", "waves in an impossible sea", "sonofunctial curves",
-        "sonofunctial notation", "chladni resonance field", "spectra website", "sonofunctial typography: oscilla", "2D animation"
+        "periodic tree of elements", "quanta and fields", "waves in an impossible sea"
     ];
 
     searchIconDiv.addEventListener("click", () => {
@@ -137,31 +136,25 @@ document.addEventListener('DOMContentLoaded', function () {
                         li.classList.add("size-of-an-atom-bg");
                         li.classList.add("search-item-bg");
                         li.addEventListener("click", () => {
-                            window.location.href = "this_is_the_size_of_an_atom.html";
+                            window.location.href = "size_of_an_atom.html";
                         });
                     } else if (word === "quanta and fields") {
                         li.classList.add("quanta-and-fields-bg");
                         li.classList.add("search-item-bg");
                         li.addEventListener("click", () => {
-                            window.location.href = "quanta_and_fields.html";
+                            window.location.href = "book-covers.html";
                         });
                     } else if (word === "waves in an impossible sea") {
                         li.classList.add("waves-in-an-impossible-sea-bg");
                         li.classList.add("search-item-bg");
                         li.addEventListener("click", () => {
-                            window.location.href = "waves_in_an_impossible_sea.html";
+                            window.location.href = "book-covers.html";
                         });
                     } else if (word === "periodic tree of elements") {
                         li.classList.add("periodic-tree-bg");
                         li.classList.add("search-item-bg");
                         li.addEventListener("click", () => {
                             window.location.href = "periodic-tree-of-elements.html";
-                        });
-                    } else if (word === "periodic tree of emissions") {
-                        li.classList.add("periodic-tree-bg");
-                        li.classList.add("search-item-bg");
-                        li.addEventListener("click", () => {
-                            window.location.href = "periodic_tree.html";
                         });
                     } else if (word === "sonofunctial curves") {
                         li.classList.add("sonofunctial-curves-bg");

@@ -96,7 +96,7 @@ function draw() {
                         circle(smoothedFingerPos.x, smoothedFingerPos.y, 16);
 
                         push();
-                        translate((innerWidth - 500) / 2, 0);
+                        translate((innerWidth - 500) / 2, - 100);
                         strokeWeight(8);
                         noFill();
                         stroke(adjustedColor);
@@ -114,7 +114,7 @@ function draw() {
 
         if (hands.length > 1) {
             push();
-            translate((innerWidth - 500) / 2, 0);
+            translate((innerWidth - 500) / 2, - 100);
             drawingContext.globalCompositeOperation = 'destination-over';
             strokeWeight(8);
             noFill();
