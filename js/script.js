@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchResults = document.getElementById("search-results");
 
     const keywords = [
-        "hydrogen emission spectrum", "electron probability distribution", "percentage of our universe", "this is the size of an atom",
+        "hydrogen emission spectrum", "electron probability distribution", "elements of our universe", "this is the size of an atom",
         "periodic tree of elements", "periodic tree of emissions", "quanta and fields", "waves in an impossible sea", "sonofunctial curves",
         "sonofunctial notation", "chladni resonance field", "spectra website", "sonofunctial typography: oscilla", "2D animation"
     ];
@@ -127,8 +127,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         li.addEventListener("click", () => {
                             window.location.href = "electron-probability-distribution.html";
                         });
-                    } else if (word === "percentage of our universe") {
-                        li.classList.add("percentage-of-our-universe-bg");
+                    } else if (word === "elements of our universe") {
+                        li.classList.add("elements-of-our-universe-bg");
                         li.classList.add("search-item-bg");
                         li.addEventListener("click", () => {
                             window.location.href = "percentage_of_our_universe.html";
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         li.classList.add("periodic-tree-bg");
                         li.classList.add("search-item-bg");
                         li.addEventListener("click", () => {
-                            window.location.href = "periodic_tree.html";
+                            window.location.href = "periodic-tree-of-elements.html";
                         });
                     } else if (word === "periodic tree of emissions") {
                         li.classList.add("periodic-tree-bg");

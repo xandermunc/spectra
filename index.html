@@ -20,15 +20,15 @@
         <div id="logo" class="grid-item header-item span-4 text-underline-parent">
             <p class="header-icon"><a class="no-style" href="index.html">SPECTRA</a></p>
         </div>
-        <div class="grid-item header-item non-menu-item non-mobile text-underline-parent">
-            <p class="text-underline"><a class="no-style" href="index.html">About</a></p>
-        </div>
-        <a href="lessons.html" class="grid-item header-item non-menu-item non-mobile text-underline-parent no-style">
+        <a href="about.html" class="grid-item header-item non-menu-item non-mobile text-underline-parent no-style">
+            <p class="text-underline">About</p>
+        </a>
+        <a href="posters.html" class="grid-item header-item non-menu-item non-mobile text-underline-parent no-style">
             <p class="text-underline">Posters</p>
         </a>
-        <div class="grid-item header-item non-menu-item non-mobile text-underline-parent">
+        <a href="lessons.html" class="grid-item header-item non-menu-item non-mobile text-underline-parent no-style">
             <p class="text-underline">Interactive</p>
-        </div>
+        </a>
         <div class="grid-item header-item space-between">
             <div id="search-icon-div" class="non-menu-item">
                 <svg id="mobile-search-icon" xmlns="http://www.w3.org/2000/svg" width="21" height="20"
@@ -68,32 +68,27 @@
                 </div>
                 <div class="menu-text-parent large-text-margin-bottom">
                     <div class="hover-parent">
-                        <a href="/test/index.html" class="no-style menu-text">Animation</a>
+                        <a href="posters.html" class="no-style menu-text">Animation</a>
                     </div>
                 </div>
                 <div class="menu-text-parent large-text-margin-bottom">
                     <div class="hover-parent">
-                        <a href="hydrogen-emission-spectrum.html" class="no-style menu-text">Interactive</a>
+                        <a href="lessons.html" class="no-style menu-text">Interactive</a>
                     </div>
                 </div>
                 <div class="menu-text-parent large-text-margin-bottom">
                     <div class="hover-parent">
-                        <a href="hydrogen-emission-spectrum.html" class="no-style menu-text">3D</a>
+                        <a href="posters.html" class="no-style menu-text">3D</a>
                     </div>
                 </div>
                 <div class="menu-text-parent large-text-margin-bottom">
                     <div class="hover-parent">
-                        <a href="hydrogen-emission-spectrum.html" class="no-style menu-text">Book Covers</a>
+                        <a href="book-covers.html" class="no-style menu-text">Book Covers</a>
                     </div>
                 </div>
                 <div class="menu-text-parent large-text-margin-bottom">
                     <div class="hover-parent">
-                        <a href="hydrogen-emission-spectrum.html" class="no-style menu-text">Music</a>
-                    </div>
-                </div>
-                <div class="menu-text-parent large-text-margin-bottom">
-                    <div class="hover-parent">
-                        <a href="hydrogen-emission-spectrum.html" class="no-style menu-text">About</a>
+                        <a href="about.html" class="no-style menu-text">About</a>
                     </div>
                 </div>
             </div>
@@ -145,10 +140,11 @@
 
     <section>
         <div class="grid padding margin-top">
-            <!-- HES -->
+            <!-- Hydrogen Emissioin Spectrum -->
             <div class="grid-item span-4">
-                <img oncontextmenu="return false;" draggable="false"
-                    src="images/Hydrogen-Emission-Spectrum/Hydrogen-Emission-Spectrum_18x24.jpg">
+                <a href="hydrogen-emission-spectrum.html" class="default-cursor"><img oncontextmenu="return false;"
+                        draggable="false"
+                        src="images/Hydrogen-Emission-Spectrum/Hydrogen-Emission-Spectrum_18x24.jpg"></a>
                 <div class="text-item">
                     <p class="non-mobile">Light</p>
                     <div>
@@ -158,27 +154,23 @@
                             </a>
                         </div>
                         <p class="grey caption">First of a four part poster series, this poster answers the questions:
-                            How do
-                            atoms create light? And what is the Balmer Series?</p>
+                            How do atoms create light? And what is the Balmer Series?</p>
                     </div>
                     <div class="mobile-spacer"></div>
                 </div>
             </div>
 
             <div class="grid-item span-4">
-                <!-- Photon -->
+                <!-- Photon Video-->
                 <video autoplay muted loop playsinline>
                     <source src="videos/photon.mp4" type="video/mp4">
                 </video>
                 <div class="text-item">
                     <p class="non-mobile">Light</p>
                     <div>
-                        <div class="text-underline-parent">
-                            <p class="text-underline text-margin-bottom">Photon</p>
-                        </div>
+                        <p class="text-margin-bottom">Photon</p>
                         <p class="grey margin-bottom caption">A test animation to explore a photons movement with a
-                            changing
-                            "wavelength".</p>
+                            trailing "wavelength".</p>
                     </div>
                 </div>
 
@@ -187,13 +179,12 @@
                 <div class="text-item">
                     <p class="non-mobile">Sound</p>
                     <div>
-                        <div class="text-underline-parent">
-                            <p class="text-underline text-margin-bottom">Blue Sonofunctia</p>
-                        </div>
-                        <p class="grey caption">An exploration in rendering Sonofunctial curves in 3D.</p>
+                        <p class="text-margin-bottom">Sonofunctial Curves</p>
+                        <p class="grey caption">A series of Sonofunctial Curves rendered in 3D.</p>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
 
         <div class="grid padding margin-top margin-bottom">
@@ -205,16 +196,15 @@
                 <div class="text-item">
                     <p class="non-mobile">Light</p>
                     <div>
-                        <div class="text-underline-parent">
-                            <p class="text-underline text-margin-bottom">Impossible Waves</p>
-                        </div>
-                        <p class="grey caption">An exploration in graphing animated waves with impossible rotations.</p>
+                        <p class="text-margin-bottom">Impossible Waves</p>
+                        <p class="grey caption">An exploration in graphing animated waves with impossible rotations.
+                        </p>
                     </div>
                 </div>
                 <div class="mobile-spacer"></div>
             </div>
 
-            <!-- Wave Stack -->
+            <!-- Blend Mode -->
             <div class="grid-item span-5">
                 <video autoplay muted loop playsinline>
                     <source src="videos/2.mp4" type="video/mp4">
@@ -222,22 +212,20 @@
                 <div class="text-item">
                     <p class="non-mobile">Light</p>
                     <div>
-                        <div class="text-underline-parent">
-                            <p class="text-underline text-margin-bottom">Wave's Origin</p>
-                        </div>
-                        <p class="grey caption">A test animation to explore the symmetry in a set of wave's movement
-                            from a
-                            source.</p>
+                        <p class="text-margin-bottom">Explorations with Glow</p>
+                        <p class="grey caption">A test animation to explore the the appearence of a quantum realm
+                            through glow.</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="grid padding margin-top">
-            <!-- HES -->
+            <!-- Electron Probability Distribution -->
             <div class="grid-item span-4">
-                <img oncontextmenu="return false;" draggable="false"
-                    src="images/Electron-Probability-Distribution/Electron-Probability-Density_18x24.jpg">
+                <a href="electron-probability-distribution.html" class="default-cursor"><img
+                        oncontextmenu="return false;" draggable="false"
+                        src="images/Electron-Probability-Distribution/Electron-Probability-Density_18x24.jpg"></a>
                 <div class="text-item">
                     <p class="non-mobile">Light</p>
                     <div>
@@ -256,24 +244,39 @@
             </div>
 
             <div class="grid-item span-4">
-                <!-- Photon -->
-                <img oncontextmenu="return false;" draggable="false"
-                    src="images/Hydrogen-Emission-Spectrum/Hydrogen-Emission-Spectrum_N3.jpg">
-                <img oncontextmenu="return false;" draggable="false"
-                    src="images/Hydrogen-Emission-Spectrum/Hydrogen-Emission-Spectrum_N4.jpg">
-                <img oncontextmenu="return false;" draggable="false"
-                    src="images/Hydrogen-Emission-Spectrum/Hydrogen-Emission-Spectrum_N5.jpg">
-                <img oncontextmenu="return false;" draggable="false"
-                    src="images/Hydrogen-Emission-Spectrum/Hydrogen-Emission-Spectrum_N6.jpg">
+                <!-- Hydrogen Emission N6 -->
+                <a href="hydrogen-emission-spectrum.html" class="default-cursor"><img oncontextmenu="return false;"
+                        draggable="false" src="images/Hydrogen-Emission-Spectrum/Hydrogen-Emission-Spectrum_N3.jpg">
+                </a>
+                <a href="hydrogen-emission-spectrum.html" class="default-cursor"><img oncontextmenu="return false;"
+                        draggable="false" src="images/Hydrogen-Emission-Spectrum/Hydrogen-Emission-Spectrum_N4.jpg">
+                </a>
                 <div class="text-item">
                     <p class="non-mobile">Light</p>
                     <div>
                         <div class="text-underline-parent">
-                            <p class="text-underline text-margin-bottom">Photon</p>
+                            <a class="no-style" href="hydrogen-emission-spectrum.html">
+                                <p class="text-underline text-margin-bottom">H-Alpha | H-Beta Transition</p>
+                            </a>
                         </div>
-                        <p class="grey margin-bottom caption">A test animation to explore a photons movement with a
-                            changing
-                            "wavelength".</p>
+                        <p class="grey margin-bottom caption">Part of the balmer series, the H-alpha and H-beta
+                            transitions emits
+                            hydrogen's red and blue emission lines.</p>
+                    </div>
+                </div>
+                <!-- PROCESSING CLOUD -->
+                <video autoplay muted loop playsinline>
+                    <source src="videos/Electron-Probability-Distribution_Processing-1.mp4" type="video/mp4">
+                </video>
+                <div class="text-item">
+                    <p class="non-mobile">Light</p>
+                    <div>
+                        <div class="text-underline-parent">
+                            <a class="no-style" href="electron-probability-distribution.html">
+                                <p class="text-underline text-margin-bottom">Electron Probability Cloud</p>
+                            </a>
+                        </div>
+                        <p class="grey caption">Exploring the theoretical 4d orbitals of hydrogen in 3d space.</p>
                     </div>
                 </div>
             </div>
@@ -282,21 +285,25 @@
         <!-- ATOM -->
         <div class="grid padding margin-top margin-bottom">
             <div class="non-mobile grid-item span-1"></div>
+            <!-- EPD Processing -->
             <div class="grid-item span-5">
-                <img oncontextmenu="return false;" draggable="false"
-                    src="images/This-is-the-Size-of-an-Atom/This-is-the-Size-of-an-Atom_Web.jpg">
+                <a href="size-of-an-atom.html" class="default-cursor">
+                    <img oncontextmenu="return false;" draggable="false"
+                        src="images/This-is-the-Size-of-an-Atom/This-is-the-Size-of-an-Atom_Web.jpg"></a>
             </div>
             <div class="grid-item span-2">
-                <p class="non-mobile text-margin-bottom">Light</p>
                 <div class="text-underline-parent">
-                    <p class="text-underline text-margin-bottom">Periodic Tree of Elements</p>
+                    <a href="size-of-an-atom.html">
+                        <p class="text-underline text-margin-bottom">The Size of an Atom</p>
+                    </a>
                 </div>
-                <p class="grey caption">Understanding the Periodic Table without staring at numbers.</p>
+                <p class="grey caption">Third of a four part poster series, this poster illustrates the scale
+                    of an atom relative to the size of the poster it is printed on.</p>
             </div>
         </div>
 
         <div class="grid padding margin-top margin-bottom">
-            <!-- Sonofunctial Notation -->
+            <!-- SONOFUNCTIA NOTATION -->
             <div class="grid-item span-5 audio-hover">
                 <div class="audio-toggle centered">Unmute</div>
                 <video autoplay muted loop playsinline>
@@ -305,31 +312,28 @@
                 <div class="text-item">
                     <p class="non-mobile">Sound</p>
                     <div>
-                        <div class="text-underline-parent">
-                            <p class="text-underline text-margin-bottom">Sonofunctial Notation</p>
-                        </div>
-                        <p class="grey caption">A test animation to explore the symmetry in a set of wave's movement
-                            from a
-                            source.</p>
+                        <p class="text-margin-bottom">Sonofunctial Notation</p>
+                        <p class="grey caption">Sonofunctial curves used as a form of music notation to an original
+                            composition</p>
                     </div>
                 </div>
+                <div class="mobile-spacer"></div>
             </div>
 
-            <!-- PHONE -->
+            <!-- SONOFUNCTIAL STAR -->
             <div class="grid-item span-3">
                 <video autoplay muted loop playsinline>
                     <source src="videos/Reveal.mp4" type="video/mp4">
                 </video>
                 <div class="text-item">
-                    <p class="non-mobile">Website</p>
+                    <p class="non-mobile">Light</p>
                     <div>
                         <div class="text-underline-parent">
-                            <p class="text-underline text-margin-bottom">Spectra Mobile</p>
+                            <p class="text-margin-bottom">Photon Star</p>
                         </div>
-                        <p class="grey caption">An exploration in graphing animated waves with impossible rotations.</p>
+                        <p class="grey caption">An exploration in using Sonofunctial curves as motion paths.</p>
                     </div>
                 </div>
-                <div class="mobile-spacer"></div>
             </div>
         </div>
 
@@ -345,211 +349,242 @@
             <div class="span-3">
                 <div class="text-item">
                     <div>
-                        <div class="text-underline-parent">
-                            <p class="text-underline text-margin-bottom">Chladni Resonance Field</p>
-                        </div>
-                        <p class="non-mobile">Light</p>
-                        <p class="grey caption">An exploration in graphing animated waves with impossible rotations.</p>
+                        <p class="text-margin-bottom">Chladni Resonance Field</p>
+                        <p class="non-mobile">Sound</p>
+                        <p class="grey caption">Creating a 3D, math accurate, resonance field to make sound reactive
+                            Chladni patterns.</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="grid padding margin-top margin-bottom">
-            <!-- COVER -->
-            <!-- <div class="span-1"></div> -->
+            <!-- QUANTA COVER -->
             <div class="grid-item span-4">
-                <img oncontextmenu="return false;" draggable="false" src="images/Quanta-and-Fields_Cover copy.jpg">
+                <a href="book-covers.html" class="default-cursor">
+                    <img oncontextmenu="return false;" draggable="false"
+                        src="images/Quanta-and-Fields_Cover_2_Color copy.jpg"></a>
                 <div class="text-item">
-                    <p class="non-mobile">Sound</p>
+                    <p class="non-mobile">Light | Sound</p>
                     <div>
                         <div class="text-underline-parent">
-                            <p class="text-underline text-margin-bottom">Sonofunctial Notation</p>
+                            <a href="book-covers.html">
+                                <p class="text-underline text-margin-bottom">Quanta and Fields</p>
+                            </a>
                         </div>
-                        <p class="grey caption">A test animation to explore the symmetry in a set of wave's movement
-                            from a
-                            source.</p>
+                        <p class="grey caption">Cover design for Sean Carroll's <i>Quanta and Fields</i>.</p>
                     </div>
                 </div>
+                <div class="mobile-spacer"></div>
             </div>
             <div class="grid-item span-4">
-                <!-- <img oncontextmenu="return false;" draggable="false" src="images/light-video.0001_1.0001.jpg"> -->
                 <img oncontextmenu="return false;" draggable="false" src="images/corner copy.jpg">
                 <div class="text-item">
-                    <p class="non-mobile">Sound</p>
+                    <p class="non-mobile">Light</p>
                     <div>
-                        <div class="text-underline-parent">
-                            <p class="text-underline text-margin-bottom">Sonofunctial Notation</p>
-                        </div>
-                        <p class="grey caption margin-bottom">A test animation to explore the symmetry in a set of
-                            wave's movement
-                            from a
-                            source.</p>
+                        <p class="text-margin-bottom">Subsurface Scattering</p>
+                        <p class="grey caption">An exploration in rendering one of the softest
+                            interactions between light and matter.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="grid padding margin-top margin-bottom">
-            <!-- PHOTO -->
-            <!-- <div class="span-1"></div> -->
+        <div class="grid padding margin-top">
+            <div class="grid-item span-4">
+                <!-- CLOUD -->
+                <a href="electron-probability-distribution.html" class="default-cursor"><img
+                        oncontextmenu="return false;" draggable="false"
+                        src="images/Electron-Probability-Distribution/Electron-Probability-Density_Cloud-Maya-1.jpg"></a>
+                <div class="text-item">
+                    <p class="non-mobile">Light</p>
+                    <div>
+                        <div class="text-underline-parent">
+                            <a class="no-style" href="electron-probability-distribution.html">
+                                <p class="text-underline text-margin-bottom">Electron Cloud</p>
+                            </a>
+                        </div>
+                        <p class="grey margin-bottom caption">Rendering 1-3s orbitals of hydrogen in real space.</p>
+                    </div>
+                </div>
+
+                <a href="elements-of-our-universe.html" class="default-cursor"><img oncontextmenu="return false;"
+                        draggable="false"
+                        src="images/This-is-the-Size-of-an-Atom/This-is-the-Size-of-an-Atom_Web-Square.jpg"></a>
+                <div class="text-item">
+                    <p class="non-mobile">Light</p>
+                    <div>
+                        <div class="text-underline-parent">
+                            <a href="size-of-an-atom.html">
+                                <p class="text-underline text-margin-bottom">The Size of an Atom</p>
+                            </a>
+                        </div>
+                        <p class="grey caption">Third of a four part poster series, this poster
+                            illustrates the scale
+                            of an atom relative to the size of the poster it is printed on.</p>
+                    </div>
+                    <div class="mobile-spacer"></div>
+                </div>
+            </div>
+
+            <!-- ELEMENTS OF OUR UNIVERSE -->
+            <div class="grid-item span-4">
+                <a href="elements-of-our-universe.html" class="default-cursor"><img oncontextmenu="return false;"
+                        draggable="false"
+                        src="images/Elements-of-our-Universe/Elements-of-our-Universe_18x24-Striped.jpg"></a>
+                <div class="text-item">
+                    <p class="non-mobile">Light</p>
+                    <div>
+                        <div class="text-underline-parent">
+                            <a href="elements-of-our-universe.html">
+                                <p class="text-underline text-margin-bottom">Elements of our Universe</p>
+                            </a>
+                        </div>
+                        <p class="grey caption margin-bottom">Final of a four part poster series, this poster answers
+                            the question: what is our universe made of by percentage of mass?</p>
+                    </div>
+                </div>
+
+                <video autoplay muted loop playsinline>
+                    <source src="videos/2 copy.mp4" type="video/mp4">
+                </video>
+                <div class="text-item">
+                    <p class="non-mobile">Light</p>
+                    <div>
+                        <p class="text-margin-bottom">Impossible Waves</p>
+                        <p class="grey caption">An exploration in graphing animated waves with impossible rotations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid padding margin-top">
+            <div class="grid-item span-3">
+                <!-- LETTERS -->
+                <video autoplay muted loop playsinline>
+                    <source src="videos/SPECTRA_letterforms.mp4" type="video/mp4">
+                </video>
+                <div class="text-item">
+                    <p class="non-mobile">Sound</p>
+                    <div>
+                        <p class="text-margin-bottom">Oscilla: Typeface</p>
+                        <p class="grey margin-bottom caption">A typeface made by combining a bold sans serif with
+                            Sonofunctial curves.</p>
+                    </div>
+                </div>
+            </div>
+
             <div class="grid-item span-5">
-                <!-- <img oncontextmenu="return false;" draggable="false" src="images/blue copy cube.jpg"> -->
-                <img oncontextmenu="return false;" draggable="false" src="images/Letter_A-2.jpg">
+                <!-- BANNER -->
+                <img oncontextmenu="return false;" draggable="false" src="images/banner copy.png">
+                <div class="text-item">
+                    <p class="non-mobile">Sound</p>
+                    <div>
+                        <p class="text-margin-bottom">Sonofunctial Curves</p>
+                        <p class="grey margin-bottom caption">Mathematical sculptures made with sound.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid padding margin-bottom">
+            <!-- ELEMENTS -->
+            <div class="span-1"></div>
+            <div class="grid-item span-3">
+                <a href="periodic-tree-of-elements.html" class="default-cursor">
+                    <img oncontextmenu="return false;" draggable="false"
+                        src="images/Periodic-Tree-of-Elements/Lithium.jpg">
+                </a>
+            </div>
+            <div class="mobile-spacer"></div>
+            <div class="grid-item span-3">
+                <a href="periodic-tree-of-elements.html" class="default-cursor">
+                    <img oncontextmenu="return false;" draggable="false"
+                        src="images/Periodic-Tree-of-Elements/Silicon.jpg">
+                </a>
                 <div class="text-item">
                     <p class="non-mobile">Light</p>
                     <div>
                         <div class="text-underline-parent">
-                            <p class="text-underline text-margin-bottom">Periodic Tree of Elements</p>
+                            <a class="no-style" href="periodic-tree-of-elements.html">
+                                <p class="text-underline text-margin-bottom">Lithium & Silicon</p>
+                            </a>
                         </div>
-                        <p class="grey caption">Understanding the Periodic Table without staring at numbers.</p>
+                        <p class="grey caption">Elements from the periodic tree of elements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid padding margin-top margin-bottom">
+            <div class="grid-item span-4">
+                <img oncontextmenu="return false;" draggable="false" src="images/corner2 copy.jpg">
+                <div class="text-item">
+                    <p class="non-mobile">Light</p>
+                    <div>
+                        <p class="text-margin-bottom">Subsurface Scattering</p>
+                        <p class="grey caption margin-bottom">An exploration in rendering one of the softest
+                            interactions between light and matter.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- WAVES COVER -->
+            <div class="grid-item span-4">
+                <a href="book-covers.html" class="default-cursor">
+                    <img oncontextmenu="return false;" draggable="false"
+                        src="images/Waves-in-an-Impossible-Sea copy.jpg"></a>
+                <div class="text-item">
+                    <p class="non-mobile">Light | Sound</p>
+                    <div>
+                        <div class="text-underline-parent">
+                            <a href="book-covers.html">
+                                <p class="text-underline text-margin-bottom">Quanta and Fields</p>
+                            </a>
+                        </div>
+                        <p class="grey caption">Cover design for Sean Carroll's <i>Quanta and Fields</i>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid padding margin-top margin-bottom">
+            <div class="grid-item span-4">
+                <a href="size-of-an-atom.html" class="default-cursor">
+                    <img oncontextmenu="return false;" draggable="false"
+                        src="images/This-is-the-Size-of-an-Atom/This-is-the-Size-of-an-Atom_Web-Title.jpg">
+                </a>
+                <div class="text-item">
+                    <p class="non-mobile">Light</p>
+                    <div>
+                        <div class="text-underline-parent">
+                            <a href="size-of-an-atom.html">
+                                <p class="text-underline text-margin-bottom">The Size of an Atom</p>
+                            </a>
+                        </div>
+                        <p class="grey caption">Third of a four part poster series, this poster
+                            illustrates the scale
+                            of an atom relative to the size of the poster it is printed on.</p>
                     </div>
                 </div>
                 <div class="mobile-spacer"></div>
             </div>
-
             <div class="grid-item span-3">
-                <!-- <img oncontextmenu="return false;" draggable="false"
-                    src="images/Screenshot 2025-04-17 at 11.55.22 AM.png"> -->
-                <img oncontextmenu="return false;" draggable="false" src="images/Blur-Phone_Mockup_2.png">
+                <!-- Overtone Series -->
+                <a href="overtone-series.html" class="default-cursor">
+                    <img oncontextmenu="return false;" draggable="false"
+                        src="images/Overtone-Series/Overtone-Series_24x34.jpg">
+                </a>
                 <div class="text-item">
                     <p class="non-mobile">Sound</p>
                     <div>
                         <div class="text-underline-parent">
-                            <p class="text-underline text-margin-bottom">Sonofunctial Notation</p>
+                            <a href="overtone-series.html">
+                                <p class="text-underline text-margin-bottom">Overtone Series</p>
+                            </a>
                         </div>
-                        <p class="grey caption">A test animation to explore the symmetry in a set of wave's movement
-                            from a
-                            source.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SPECTRA -->
-        <div class="grid padding margin-top margin-bottom">
-            <div class="non-mobile grid-item span-1"></div>
-            <div class="grid-item span-3">
-                <img oncontextmenu="return false;" draggable="false" src="images/Waves-in-an-Impossible-Sea-2.jpg">
-                <div class="text-item">
-                    <p class="non-mobile">Light</p>
-                    <div>
-                        <div class="text-underline-parent">
-                            <p class="text-underline text-margin-bottom">Periodic Tree of Elements</p>
-                        </div>
-                        <p class="grey caption">Understanding the Periodic Table without staring at numbers.</p>
-                    </div>
-                </div>
-                <div class="mobile-spacer"></div>
-            </div>
-
-            <div class="grid-item span-3">
-                <img oncontextmenu="return false;" draggable="false" src="images/SPECTRA1.jpg">
-                <div class="text-item">
-                    <p class="non-mobile">Light</p>
-                    <div>
-                        <div class="text-underline-parent">
-                            <p class="text-underline text-margin-bottom">Wave's Origin</p>
-                        </div>
-                        <p class="grey caption">A test animation to explore the symmetry in a set of wave's movement
-                            from a
-                            source.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="non-mobile grid-item span-1"></div>
-        </div>
-
-        <!-- EU -->
-        <div class="grid padding margin-top margin-bottom">
-            <div class="grid-item span-4">
-                <img oncontextmenu="return false;" draggable="false" src="images/EPD.jpg">
-                <div class="text-item">
-                    <p class="non-mobile">Light</p>
-                    <div>
-                        <div class="text-underline-parent">
-                            <p class="text-underline text-margin-bottom">Periodic Tree of Elements</p>
-                        </div>
-                        <p class="grey caption">Understanding the Periodic Table without staring at numbers.</p>
-                    </div>
-                </div>
-                <div class="mobile-spacer"></div>
-            </div>
-
-            <div class="grid-item span-4">
-                <img oncontextmenu="return false;" draggable="false" src="images/EU4.jpg">
-                <div class="text-item">
-                    <p class="non-mobile">Light</p>
-                    <div>
-                        <div class="text-underline-parent">
-                            <p class="text-underline text-margin-bottom">Wave's Origin</p>
-                        </div>
-                        <p class="grey caption">A test animation to explore the symmetry in a set of wave's movement
-                            from a
-                            source.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="non-mobile grid-item span-1"></div>
-        </div>
-
-        <!-- PTE -->
-        <div class="grid padding margin-top margin-bottom">
-            <div class="grid-item span-2">
-                <img oncontextmenu="return false;" draggable="false" src="images/PTE.jpg">
-                <div class="text-item">
-                    <p class="non-mobile">Light</p>
-                    <div>
-                        <div class="text-underline-parent">
-                            <p class="text-underline text-margin-bottom">Periodic Tree of Elements</p>
-                        </div>
-                        <p class="grey caption">Understanding the Periodic Table without staring at numbers.</p>
-                    </div>
-                </div>
-                <div class="mobile-spacer"></div>
-            </div>
-
-            <div class="grid-item span-2">
-                <img oncontextmenu="return false;" draggable="false" src="images/PTE2.jpg">
-                <div class="text-item">
-                    <p class="non-mobile">Light</p>
-                    <div>
-                        <div class="text-underline-parent">
-                            <p class="text-underline text-margin-bottom">Wave's Origin</p>
-                        </div>
-                        <p class="grey caption">A test animation to explore the symmetry in a set of wave's movement
-                            from a
-                            source.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid-item span-2">
-                <img oncontextmenu="return false;" draggable="false" src="images/Exhibition-Poster_1-07 20.jpg">
-                <div class="text-item">
-                    <p class="non-mobile">Light</p>
-                    <div>
-                        <div class="text-underline-parent">
-                            <p class="text-underline text-margin-bottom">Wave's Origin</p>
-                        </div>
-                        <p class="grey caption">A test animation to explore the symmetry in a set of wave's movement
-                            from a
-                            source.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid-item span-2">
-                <img oncontextmenu="return false;" draggable="false" src="images/Exhibition-Poster_1-07 19.jpg">
-                <div class="text-item">
-                    <p class="non-mobile">Light</p>
-                    <div>
-                        <div class="text-underline-parent">
-                            <p class="text-underline text-margin-bottom">Wave's Origin</p>
-                        </div>
-                        <p class="grey caption">A test animation to explore the symmetry in a set of wave's movement
-                            from a
-                            source.</p>
+                        <p class="grey caption">A poster on the pattern of waves that controls the
+                            differences between all sounds.</p>
                     </div>
                 </div>
             </div>

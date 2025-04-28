@@ -197,6 +197,7 @@ p {
     letter-spacing: 0.05rem;
     line-height: 1.8rem;
     cursor: default;
+    max-width: 700px;
 }
 
 p.caption {
@@ -220,6 +221,10 @@ span.bold {
     font-weight: 400;
 }
 
+a.white {
+    color: white !important;
+}
+
 p.header-icon {
     font-family: 'Lexend-Medium', sans-serif;
     font-weight: 400 !important;
@@ -230,10 +235,12 @@ p.header-icon {
 p.grey {
     color: var(--grey);
     font-family: "Neulis-Sans", sans-serif;
+    max-width: 400px;
 }
 
 .paragraph {
     font-family: "Neulis-Sans", sans-serif !important;
+    max-width: 700px;
 }
 
 .white {
@@ -335,6 +342,10 @@ a.underline::after {
 a.underline:hover::after {
     opacity: 1;
     transform: scaleX(1);
+}
+
+a.default-cursor {
+    cursor: default !important;
 }
 
 .text-item {
@@ -445,17 +456,25 @@ video.no-margin-bottom {
     margin-top: calc(var(--header-height) / 2 * 3);
 }
 
+.double-margin-top {
+    margin-top: calc((var(--header-height) / 2 * 3) * 2);
+}
+
+.double-margin-bottom {
+    margin-bottom: calc((var(--header-height) / 2 * 3) * 2);
+}
+
 .margin-bottom {
     margin-bottom: calc(var(--header-height) / 2 * 3);
 }
 
-.bottom-border {
+/* .bottom-border {
     border-bottom: var(--black) solid var(--border-width);
 }
 
 .top-border {
     border-top: var(--black) solid var(--border-width);
-}
+} */
 
 .large-margin-bottom {
     margin-bottom: var(--header-height) !important;
@@ -752,7 +771,7 @@ a.menu-text {
     /* background: radial-gradient(circle at top, var(--input-color) 0%, transparent 50%), */
     /* linear-gradient(to top, var(--white), var(--light-blue), var(--input-color)); */
     background-attachment: fixed;
-    border-bottom: var(--border-width) var(--black) solid;
+    /* border-bottom: var(--border-width) var(--black) solid; */
 }
 
 
@@ -762,17 +781,20 @@ a.menu-text {
     background-image: url('../images/Hydrogen-Emission-Spectrum/Hydrogen-Emission-Spectrum_Search-Bar-Square.jpg');
 }
 
-
 .electron-probability-bg {
     background-image: url('../images/Electron-Probability-Distribution/Electron-Probability-Density_Search-Bar-Square.jpg');
 }
 
-.percentage-of-our-universe-bg {
+.elements-of-our-universe-bg {
     background-image: url('../images/Elements-of-our-Universe/Elements-of-our-Universe_18x24_Search-Bar-Square.jpg');
 }
 
 .quanta-and-fields-bg {
     background-image: url('../images/Quanta-and-Fields_Cover\ copy.jpg');
+}
+
+.periodic-tree-bg {
+    background-image: url('../images/Periodic-Tree-of-Elements/Periodic-Tree-of-Elements_Search-Bar-Square.jpg');
 }
 
 .search-item-bg {
@@ -931,6 +953,10 @@ a.menu-text {
     .mobile-only {
         display: block;
     }
+
+    .grid.no-gap {
+        gap: 0 !important;
+    }
 }
 
 /* AFWV */
@@ -1049,7 +1075,7 @@ label {
     align-items: center;
     justify-content: center;
     height: var(--header-height);
-    border: var(--border-width) var(--black) solid;
+    /* border: var(--border-width) var(--black) solid; */
     border-left: none;
     text-align: center;
     line-height: var(--header-height);
@@ -1240,6 +1266,7 @@ header.black {
     opacity: 0;
     font-family: Neulis-Sans-Regular;
     letter-spacing: 0.05rem;
+    user-select: none;
 }
 
 .audio-toggle:hover {
@@ -1311,4 +1338,8 @@ header.black {
     border-radius: 10px;
     scale: 0.90;
     filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1));
+}
+
+.grid.no-gap {
+    gap: var(--grid-gap);
 }
