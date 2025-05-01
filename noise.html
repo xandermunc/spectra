@@ -39,6 +39,7 @@
             padding: 0;
             overscroll-behavior: none;
             box-sizing: content-box !important;
+            transition: all 0s !important;
         }
 
         @font-face {
@@ -166,6 +167,12 @@
         #slot-three-checkbox {
             /* border: 1px solid var(--off-black); */
             background: var(--thumb-color, var(--off-black));
+        }
+
+        header {
+            background-color: rgba(225, 225, 225, 0.1) !important;
+            /* background-color: none !important; */
+            z-index: 0 !important;
         }
 
         #vertical:checked,
@@ -352,6 +359,11 @@
             justify-content: center;
             align-items: center;
             gap: 20px;
+            transition: 0.2s ease all;
+        }
+
+        button {
+            transition: 0.2s ease all !important;
         }
 
         .space-between {
@@ -533,13 +545,13 @@
             <p class="header-icon"><a class="no-style" href="index.html">SPECTRA</a></p>
         </div>
         <a href="about.html" class="grid-item header-item non-menu-item non-mobile text-underline-parent no-style">
-            <p class="text-underline">About</p>
+            <p class="text-underline"></p>
         </a>
         <a href="posters.html" class="grid-item header-item non-menu-item non-mobile text-underline-parent no-style">
-            <p class="text-underline">Posters</p>
+            <p class="text-underline"></p>
         </a>
         <a href="lessons.html" class="grid-item header-item non-menu-item non-mobile text-underline-parent no-style">
-            <p class="text-underline">Interactive</p>
+            <p class="text-underline"></p>
         </a>
         <div class="grid-item header-item space-between">
             <div id="search-icon-div" class="non-menu-item">
@@ -636,7 +648,7 @@
         <div class="checkbox-item">
             <input type="checkbox" id="triangle-rotate-checkbox" unchecked>
             <input type="checkbox" id="triangle-rotate-checkbox-slot-two" unchecked>
-            <p class="small">Triangle Rotate</p>
+            <p class="small">Rotate Triangle</p>
         </div>
         <div class="checkbox-item">
             <input type="checkbox" id="text-checkbox" unchecked>
@@ -709,12 +721,12 @@
             <p class="small" id="step-number-slot-two">#</p>
             <p class="small" id="step-number-slot-three">#</p>
         </div>
-        <input type="range" id="step-slider" min="1" max="4" step="1" value="1">
-        <input type="range" id="step-slider-slot-two" min="1" max="4" step="1" value="1">
-        <input type="range" id="step-slider-slot-three" min="1" max="4" step="1" value="1">
+        <input type="range" id="step-slider" min="1" max="2" step="1" value="1">
+        <input type="range" id="step-slider-slot-two" min="1" max="2" step="1" value="1">
+        <input type="range" id="step-slider-slot-three" min="1" max="2" step="1" value="1">
 
         <div class="space-between margin-top">
-            <p class="small">Offset</p>
+            <p class="small">Step Offset</p>
             <p class="small" id="offset-number">#</p>
             <p class="small" id="offset-number-slot-two">#</p>
             <p class="small" id="offset-number-slot-three">#</p>
