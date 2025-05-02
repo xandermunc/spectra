@@ -969,6 +969,18 @@ a.menu-text {
     .grid.no-gap {
         gap: 0 !important;
     }
+
+    a.menu-text {
+        font-family: Neulis-Sans-Regular !important;
+        font-weight: 500 !important;
+        font-size: 1.8rem !important;
+        display: inline-block;
+        transform: translateX(-120px);
+        letter-spacing: 0.05rem;
+        line-height: 1.2rem;
+        opacity: 0;
+        transition: transform 0.4s ease, opacity 0.4s ease;
+    }
 }
 
 /* AFWV */
