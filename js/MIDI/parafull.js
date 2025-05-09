@@ -1,6 +1,6 @@
 const activeNotes = new Set();
 let phi = 0;
-let velocity = 0.01;
+let velocity = 0.005;
 
 function drawParametricCurve(svg, funcX, funcY, tMin, tMax, steps, scaleX, scaleY, translateX, translateY) {
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
@@ -86,17 +86,81 @@ function lcmOfArray(arr) {
     return arr.reduce((acc, val) => lcm(acc, val), 1);
 }
 
+
+function updateActiveIntervals() {
+    const intervalsDiv = document.getElementById("equationDisplay");
+
+    const justIntonationRatios = {
+        'C': { num: 1, den: 1 },
+        'C#': { num: 16, den: 15 },
+        'D': { num: 9, den: 8 },
+        'D#': { num: 6, den: 5 },
+        'E': { num: 5, den: 4 },
+        'F': { num: 4, den: 3 },
+        'F#': { num: 45, den: 32 },
+        'G': { num: 3, den: 2 },
+        'G#': { num: 8, den: 5 },
+        'A': { num: 5, den: 3 },
+        'A#': { num: 9, den: 5 },
+        'B': { num: 15, den: 8 }
+    };
+
+    const intervals = Array.from(activeNotes).map(noteNumber => {
+        const note = getNoteFromMIDINumber(noteNumber);
+        let { num, den } = justIntonationRatios[note] || { num: 1, den: 1 };
+        const octave = getOctaveFromMIDINumber(noteNumber);
+
+        if (octave > 4) {
+            num *= Math.pow(2, octave - 4);
+        } else if (octave < 4) {
+            den *= Math.pow(2, 4 - octave);
+        }
+
+        return { num, den };
+    });
+
+    if (intervals.length === 0) {
+        intervalsDiv.innerHTML = "";
+        return;
+    }
+
+    const fractionStrings = intervals.map(({ num, den }) => {
+        const gcdValue = gcd(num, den);
+        const simplifiedNumerator = num / gcdValue;
+        const simplifiedDenominator = den / gcdValue;
+        return `sin(${simplifiedNumerator}/${simplifiedDenominator} * t)`;
+    });
+
+    intervalsDiv.innerHTML = `(${fractionStrings.join(" + ")} , cos(t))`;
+}
+
+
+// This function is modified to call the interval update whenever active notes change
 function onMIDIMessage(event) {
     const command = event.data[0];
     const noteNumber = event.data[1];
     const velocity = event.data[2];
 
-    if (command >= 144 && command <= 159 && velocity > 0) {
+    const noteOnCommand = 0x90;
+    const noteOffCommand = 0x80;
+
+    if (command >= noteOnCommand && command < noteOnCommand + 16 && velocity > 0) {
         activeNotes.add(noteNumber);
-    } else if ((command >= 128 && command <= 143) || (command >= 144 && command <= 159 && velocity === 0)) {
+    } 
+
+    else if (
+        (command >= noteOffCommand && command < noteOffCommand + 16) || 
+        (command >= noteOnCommand && command < noteOnCommand + 16 && velocity === 0)
+    ) {
         activeNotes.delete(noteNumber);
     }
+
+    // After updating the active notes, call the function to update intervals
+    updateActiveIntervals();
+
+    console.log(`Active Notes: ${Array.from(activeNotes)}`);
 }
+
 function animate() {
     phi += velocity;
     if (phi > 2 * Math.PI) {
@@ -144,6 +208,10 @@ function animate() {
 
     requestAnimationFrame(animate);
 }
+
+// Add this call to also update the intervals when animation starts
+requestAnimationFrame(animate);
+
 
 function animateTop() {
     phi += velocity;

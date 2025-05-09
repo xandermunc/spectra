@@ -1367,3 +1367,7 @@ header.black {
 .grid.no-gap {
     gap: var(--grid-gap);
 }
+
+p.sans {
+    font-family: Neulis-Sans;
+}

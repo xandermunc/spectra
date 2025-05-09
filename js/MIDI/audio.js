@@ -4,12 +4,26 @@ const gainNodes = {};
 let masterGainNode; 
 const maxNotes = 8; 
 
-document.getElementById('startButton').addEventListener('click', () => {
-    audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    document.getElementById('startButton').disabled = true; 
-    initializeMIDI();
-    setupMasterGain();
+window.onload = () => {
+    const button = document.getElementById('startButton');
+    button.addEventListener('click', async () => {
+        console.log("Button clicked");
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        await audioContext.resume();
+        console.log("AudioContext resumed with state:", audioContext.state); 
+        button.disabled = true;
+        button.classList.add('clicked'); // Hide the button once clicked
+        setupMasterGain();
+        initializeMIDI();
+    });    
+};
+
+document.body.addEventListener('click', () => {
+    if (audioContext && audioContext.state === 'suspended') {
+        audioContext.resume().then(() => console.log('AudioContext resumed'));
+    }
 });
+
 
 function setupMasterGain() {
     masterGainNode = audioContext.createGain();
@@ -38,9 +52,16 @@ function onMIDIFailure() {
 
 function handleMIDIMessage(event) {
     const [status, note, velocity] = event.data;
-    if (status === 147 && velocity > 0) { 
+    const command = status & 0xf0; 
+    const channel = status & 0x0f; 
+
+    console.log(`MIDI message: command=${command}, channel=${channel}, note=${note}, velocity=${velocity}`);
+
+    if (command === 0x90 && velocity > 0) {
         playSineWave(note);
-    } else if (status === 131 || (status === 147 && velocity === 0)) { 
+    }
+
+    else if (command === 0x80 || (command === 0x90 && velocity === 0)) {
         stopSineWave(note);
     }
 }
@@ -50,7 +71,8 @@ function handleMIDIMessage(event) {
 
 function playSineWave(note) {
     const frequency = 440 * Math.pow(2, (note - 69) / 12); 
-    
+    console.log(`Playing note ${note} at freq ${frequency}`);
+
     const oscillator = audioContext.createOscillator();
     oscillator.type = 'sine';
     oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
@@ -70,6 +92,7 @@ function playSineWave(note) {
         delete gainNodes[note]; 
     };
 }
+
 
 function stopSineWave(note) {
     const oscillator = oscillators[note];

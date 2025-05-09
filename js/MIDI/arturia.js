@@ -81,6 +81,9 @@ class Key {
     }
 }
 
+document.getElementById('startButton').addEventListener('click', () => {
+    setupMIDI();
+});
 
 function setupMIDI() {
     if (navigator.requestMIDIAccess) {
@@ -101,11 +104,17 @@ function onMIDIFailure() {
 }
 
 function getMIDIMessage(message) {
-    const [command, note, velocity] = message.data;
-    const adjustedNote = note - 48;
-    if (command === 147 && velocity > 0) {
+    const [status, note, velocity] = message.data;
+    const command = status & 0xf0;
+    const channel = status & 0x0f; 
+    
+    const adjustedNote = note - 48; 
+    
+    if (command === 0x90 && velocity > 0) {
         activeNotesArturia.add(adjustedNote);
-    } else if (command === 131 || (command === 147 && velocity === 0)) {
+    }
+
+    else if (command === 0x80 || (command === 0x90 && velocity === 0)) {
         activeNotesArturia.delete(adjustedNote);
     }
 

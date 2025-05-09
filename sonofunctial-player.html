@@ -12,10 +12,6 @@
     <script src="js/script.js"></script>
     <script src="js/menu-icon-white.js"></script>
     <script src="js/search-icon-white.js"></script>
-    <script src="js/MIDI/arturia.js"></script>
-    <script src="js/MIDI/audio.js"></script>
-    <script src="js/MIDI/parafull.js"></script>
-
     <style>
         #svgCanvas2 {
             filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
@@ -57,14 +53,11 @@
             filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1));
         } */
 
-        /* Basic button styling */
         button {
             background-color: rgba(255, 255, 255, 0.6);
-            /* Primary blue color */
             color: #191919;
             border: none;
             border-radius: 5px;
-            /* padding: 10px 20px; */
             width: 110px;
             height: 50px;
             font-size: 16px;
@@ -73,13 +66,19 @@
             transition: background-color 0.2s ease, transform 0.2s ease;
         }
 
-        /* Hover effect */
         button:hover {
             background-color: rgba(255, 255, 255, 0.8);
             filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1));
-            /* Darker blue */
             transform: scale(0.95);
-            /* Slightly enlarge */
+        }
+
+        button.clicked {
+            display: none;
+        }
+
+        p.relative {
+            position: absolute;
+            max-width: max-content !important;
         }
     </style>
 </head>
@@ -171,20 +170,21 @@
                 <div id="box-generator"></div>
             </div> -->
         <div class="grid-item span-4 centered" style="height: calc(100vh - (var(--header-height) * 2));">
-            <svg id="svgCanvas" width="auto" height="auto" style="padding-top: var(--header-height);"></svg>
+            <svg id="svgCanvas" width="auto" height="700px" style="padding-top: var(--header-height);"></svg>
+            <p class="sans white">Front / Side</p>
         </div>
         <div class="grid-item span-4 centered">
-            <svg id="svgCanvas2" width="auto" height="auto" style="padding-top: var(--header-height);"></svg>
+            <svg id="svgCanvas2" width="auto" height="700px" style="padding-top: var(--header-height);"></svg>
+            <p class="sans white">Top</p>
+        </div>
+        <div class="grid-item span-8 centered">
+            <p class="white sans relative" id="equationDisplay"></p>
         </div>
     </div>
 
     <div class="grid padding" style="height: calc(var(--header-height) * 2);">
         <div class="grid-item span-2 centered">
-            <!-- <canvas id="superposition"></canvas> -->
-        </div>
-        <div class="grid-item span-2 centered">
-            <!-- <button id="start-button" class="centered">Unmute</button> -->
-            <button id="startButton">Fix5</button>
+            <button id="startButton">Start Audio</button>
         </div>
         <div class="grid-item span-4 centered">
             <div id="arturia"></div>
@@ -205,7 +205,9 @@
                 <a class="light">xandermunc@gmail.com</a>
             </div>
         </footer> -->
-
+    <script src="js/MIDI/arturia.js"></script>
+    <script src="js/MIDI/audio.js"></script>
+    <script src="js/MIDI/parafull.js"></script>
 </body>
 
 </html>
