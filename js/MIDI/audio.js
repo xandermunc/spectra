@@ -4,19 +4,26 @@ const gainNodes = {};
 let masterGainNode;
 const maxNotes = 8;
 
-document.getElementById('startButton').addEventListener('click', () => {
-    audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    audioContext.resume().then(() => {
-        if (audioContext.state === 'running') {
-            document.getElementById('startButton').disabled = true;
-            initializeMIDI();
-            setupMasterGain();
-        } else {
-            console.error("AudioContext is not running. Current state:", audioContext.state);
-        }
-    }).catch(err => {
-        console.error("Failed to resume AudioContext:", err);
-    });
+document.addEventListener('DOMContentLoaded', () => {
+    const startButton = document.getElementById('startButton');
+    if (startButton) {
+        startButton.addEventListener('click', () => {
+            audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            audioContext.resume().then(() => {
+                if (audioContext.state === 'running') {
+                    startButton.disabled = true;
+                    initializeMIDI();
+                    setupMasterGain();
+                } else {
+                    console.error("AudioContext is not running. Current state:", audioContext.state);
+                }
+            }).catch(err => {
+                console.error("Failed to resume AudioContext:", err);
+            });
+        });
+    } else {
+        console.error("startButton element not found in the DOM.");
+    }
 });
 
 function setupMasterGain() {
