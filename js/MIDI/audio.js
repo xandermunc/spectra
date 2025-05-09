@@ -1,14 +1,18 @@
 let audioContext;
-const oscillators = {}; 
-const gainNodes = {}; 
-let masterGainNode; 
-const maxNotes = 8; 
+const oscillators = {};
+const gainNodes = {};
+let masterGainNode;
+const maxNotes = 8;
 
 document.getElementById('startButton').addEventListener('click', () => {
     audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    document.getElementById('startButton').disabled = true; 
-    initializeMIDI();
-    setupMasterGain();
+    audioContext.resume().then(() => {
+        document.getElementById('startButton').disabled = true;
+        initializeMIDI();
+        setupMasterGain();
+    }).catch(err => {
+        console.error("Failed to resume AudioContext:", err);
+    });
 });
 
 function setupMasterGain() {
@@ -38,9 +42,9 @@ function onMIDIFailure() {
 
 function handleMIDIMessage(event) {
     const [status, note, velocity] = event.data;
-    if (status === 147 && velocity > 0) { 
+    if (status === 147 && velocity > 0) {
         playSineWave(note);
-    } else if (status === 131 || (status === 147 && velocity === 0)) { 
+    } else if (status === 131 || (status === 147 && velocity === 0)) {
         stopSineWave(note);
     }
 }
@@ -49,25 +53,25 @@ function handleMIDIMessage(event) {
 // 147 and 131
 
 function playSineWave(note) {
-    const frequency = 440 * Math.pow(2, (note - 69) / 12); 
-    
+    const frequency = 440 * Math.pow(2, (note - 69) / 12);
+
     const oscillator = audioContext.createOscillator();
     oscillator.type = 'sine';
     oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
 
     const gainNode = audioContext.createGain();
-    gainNode.gain.setValueAtTime(1 / maxNotes, audioContext.currentTime); 
+    gainNode.gain.setValueAtTime(1 / maxNotes, audioContext.currentTime);
 
     oscillator.connect(gainNode);
-    gainNode.connect(masterGainNode); 
+    gainNode.connect(masterGainNode);
     oscillator.start();
 
-    oscillators[note] = oscillator; 
+    oscillators[note] = oscillator;
     gainNodes[note] = gainNode;
 
     oscillator.onended = () => {
-        delete oscillators[note]; 
-        delete gainNodes[note]; 
+        delete oscillators[note];
+        delete gainNodes[note];
     };
 }
 
@@ -75,11 +79,11 @@ function stopSineWave(note) {
     const oscillator = oscillators[note];
     const gainNode = gainNodes[note];
     if (oscillator) {
-        oscillator.stop(); 
+        oscillator.stop();
         oscillator.disconnect();
         if (gainNode) {
             gainNode.disconnect();
         }
-        delete oscillators[note]; 
+        delete oscillators[note];
     }
 }
