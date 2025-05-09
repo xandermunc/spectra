@@ -7,9 +7,13 @@ const maxNotes = 8;
 document.getElementById('startButton').addEventListener('click', () => {
     audioContext = new (window.AudioContext || window.webkitAudioContext)();
     audioContext.resume().then(() => {
-        document.getElementById('startButton').disabled = true;
-        initializeMIDI();
-        setupMasterGain();
+        if (audioContext.state === 'running') {
+            document.getElementById('startButton').disabled = true;
+            initializeMIDI();
+            setupMasterGain();
+        } else {
+            console.error("AudioContext is not running. Current state:", audioContext.state);
+        }
     }).catch(err => {
         console.error("Failed to resume AudioContext:", err);
     });
@@ -19,19 +23,24 @@ function setupMasterGain() {
     masterGainNode = audioContext.createGain();
     masterGainNode.gain.setValueAtTime(0.5, audioContext.currentTime);
     masterGainNode.connect(audioContext.destination);
+    console.log("Master gain node set up and connected.");
 }
 
 function initializeMIDI() {
     if (navigator.requestMIDIAccess) {
-        navigator.requestMIDIAccess().then(onMIDIReady, onMIDIFailure);
+        navigator.requestMIDIAccess().then(onMIDIReady, onMIDIFailure).catch(err => {
+            console.error("Error requesting MIDI access:", err);
+        });
     } else {
         alert("Web MIDI API not supported in this browser.");
     }
 }
 
 function onMIDIReady(midiAccess) {
+    console.log("MIDI Access granted:", midiAccess);
     const inputs = midiAccess.inputs;
     inputs.forEach(input => {
+        console.log("MIDI Input detected:", input.name);
         input.onmidimessage = handleMIDIMessage;
     });
 }
@@ -42,9 +51,9 @@ function onMIDIFailure() {
 
 function handleMIDIMessage(event) {
     const [status, note, velocity] = event.data;
-    if (status === 144 && velocity > 0) {
+    if (status === 147 && velocity > 0) {
         playSineWave(note);
-    } else if (status === 128 || (status === 144 && velocity === 0)) {
+    } else if (status === 131 || (status === 147 && velocity === 0)) {
         stopSineWave(note);
     }
 }
